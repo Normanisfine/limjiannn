@@ -1,0 +1,70 @@
+.edu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    align-self: stretch;
+    width: 100%;
+    padding: 20px;
+  }
+
+
+.edu-container h1 {
+    align-self: flex-start;
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: #333; /* Change the color as needed */
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Add some letter spacing */
+    margin-left: 40px;
+  }
+
+  .edu-content {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    margin-left: 10rem;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .edu-logo {
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+  }
+  
+  .edu-details {
+
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: space-between;
+    flex-grow: 1;
+  }
+  
+  .edu-details h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .edu-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .edu-details ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+  }
