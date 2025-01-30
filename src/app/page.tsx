@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import gsap from 'gsap';
 import "./globals.css";
 import About from "@/components/About/About";
@@ -9,7 +8,6 @@ import Internship from "@/components/Internship/Internship";
 import Research from "@/components/Research/Research";
 import Project from "@/components/Project/Project";
 import Contact from "@/components/Contact/Contact";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from "react";
 
 

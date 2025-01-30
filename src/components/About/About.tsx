@@ -2,11 +2,7 @@ import React from 'react';
 import './About.css';
 import Image from 'next/image';
 import { Mail, FileUser } from 'lucide-react';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+
 
 export default function About() {
   return (
