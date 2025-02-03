@@ -6,6 +6,7 @@
     align-self: stretch;
     width: 100%;
     padding: 20px;
+    
   }
   
 .profile-photo {
@@ -15,9 +16,16 @@ margin-bottom: 20px;
 
 .about-content {
     display: flex;
-    margin: 2rem;
+    padding: 50px;
+    /* margin: 2rem; */
     margin-left: 10rem;
     gap: 10rem;
+
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px); /* Blur effect for plastic wrap appearance */
     
 }
 

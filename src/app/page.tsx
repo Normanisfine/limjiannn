@@ -2,6 +2,7 @@
 
 import gsap from 'gsap';
 import "./globals.css";
+import "./bg.css";
 import About from "@/components/About/About";
 import Education from "@/components/Education/Education";
 import Internship from "@/components/Internship/Internship";
@@ -25,6 +26,12 @@ export default function Home() {
   
   return (
     <div className="home-container">
+      <div className="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
       <div id="about" className="home-section">
         <About />
       </div>

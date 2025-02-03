@@ -1,70 +1,121 @@
 .edu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    align-self: stretch;
-    width: 100%;
-    padding: 20px;
-  }
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
 
 .edu-container h1 {
-    align-self: flex-start;
-    font-size: 2.5rem; /* Adjust the font size as needed */
-    color: #333; /* Change the color as needed */
-    margin-bottom: 20px; /* Add some space below the heading */
-    text-transform: uppercase; /* Transform text to uppercase */
-    letter-spacing: 2px; /* Add some letter spacing */
-    margin-left: 40px;
-  }
+  align-self: flex-start;
+  font-size: 3rem; /* Adjust the font size as needed */
+  color: #333; /* Change the color as needed */
+  margin-bottom: 20px; /* Add some space below the heading */
+  text-transform: uppercase; /* Transform text to uppercase */
+  letter-spacing: 2px; /* Add some letter spacing */
+  margin-left: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
 
-  .edu-content {
-    display: flex;
-    align-items: flex-start;
-    align-self: stretch;
-    margin-left: 10rem;
-    gap: 40px;
-    margin-top: 20px;
-  }
+.edu-content {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  margin-left: 10rem;
+  gap: 40px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Light border */
+  backdrop-filter: blur(10px); /* Blur effect for plastic wrap appearance */
+}
 
-  .edu-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .edu-logo {
-    border-radius: 10px; /* Optional: Add border radius for rounded corners */
-  }
-  
-  .edu-details {
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: space-between;
-    flex-grow: 1;
-  }
-  
-  .edu-details h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .edu-details p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: #000000;
-  }
+.edu-logo {
+  border-radius: 10px; /* Optional: Add border radius for rounded corners */
+}
 
-  .edu-details ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-    unicode-bidi: isolate;
-  }
+.edu-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.edu-details h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.edu-details p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #000000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.edu-details ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #023248;
+  margin: 20px 0;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: rgba(240, 248, 255, 0.4); /* Light blue with transparency */
+}
+
+.course-table th, .course-table td {
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Light border with transparency */
+  padding: 8px;
+}
+
+.course-table th {
+  background-color: rgba(173, 216, 230, 0.5); /* Light blue with transparency */
+  text-align: left;
+  color: #000000; /* Black font color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.course-table td {
+  color: #333333; /* Dark gray font color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.show-more-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: rgba(24, 178, 160, 0.5); /* Blue with transparency */
+  color: #000000; /* Black font color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-btn:hover {
+  color: #FFFFFF; /* White font color */
+  background-color: rgb(8, 98, 106); /* Solid blue on hover */
+}
