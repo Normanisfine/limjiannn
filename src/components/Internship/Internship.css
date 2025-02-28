@@ -1,0 +1,111 @@
+.internship-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    text-align: left; /* Align text to the left */
+    padding: 20px;
+    width: 100%; /* Make the container span the full width */
+  }
+  
+  .internship-container h1 {
+    font-size: 3rem; /* Adjust the font size as needed */
+    color: #333; /* Change the color as needed */
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 2px; /* Add some letter spacing */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .internship-details {
+    display: flex;
+    align-items: flex-start; /* Align items to the start (left) */
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Light border */
+    backdrop-filter: blur(10px); /* Blur effect for plastic wrap appearance */
+    width: calc(100% - 10rem); /* Make the details span the full width minus the left margin */
+    margin-left: 10rem; /* Add left margin */
+  }
+  
+  .internship-logo-container {
+    margin-right: 20px; /* Add some space between the logo and the content */
+    flex-shrink: 0; /* Prevent the logo container from shrinking */
+  }
+  
+  .internship-logo {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    object-fit: cover; /* Ensure the image scales correctly within the specified dimensions */
+  }
+  
+  .internship-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .internship-details h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .internship-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .internship-details ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+  }
+  
+  /* Media Queries for Smaller Screens */
+  @media (max-width: 768px) {
+    .internship-container h1 {
+      font-size: 2rem; /* Reduce font size for smaller screens */
+      margin-left: 0; /* Remove left margin */
+    }
+  
+    .internship-details {
+      flex-direction: column; /* Stack logo and content vertically */
+      width: 100%; /* Full width */
+      margin-left: 0; /* Remove left margin */
+    }
+  
+    .internship-logo-container {
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 10px; /* Add bottom margin */
+    }
+  
+    .internship-logo {
+      width: 80px; /* Adjust logo size */
+      height: 80px; /* Adjust logo size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .internship-container h1 {
+      font-size: 1.5rem; /* Further reduce font size for very small screens */
+    }
+  
+    .internship-details h2 {
+      font-size: 1.25rem; /* Reduce font size for smaller screens */
+    }
+  
+    .internship-details p, .internship-details ul {
+      font-size: 0.875rem; /* Reduce font size for smaller screens */
+    }
+  }

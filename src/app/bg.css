@@ -17,7 +17,7 @@
 .container div:nth-child(1) {
   height: 90%;
   width: 80%;
-  background-color: #87CEFA; /* Light Sky Blue */
+  background-color: #87CEFA; 
   left: -29%;
   top: -10%;
 }
@@ -25,7 +25,7 @@
 .container div:nth-child(2) {
   height: 80%;
   width: 70%;
-  background-color: #40E0D0; /* Turquoise */
+  background-color: #40E0D0; 
   top: -12%;
   right: -12%;
   animation-delay: 8s;
@@ -34,7 +34,7 @@
 .container div:nth-child(3) {
   height: 65%;
   width: 80%;
-  background-color: #ADD8E6; /* Light Blue */
+  background-color: #ADD8E6;
   bottom: -15%;
   right: -20%;
   animation-delay: 0.3s;
@@ -43,7 +43,7 @@
 .container div:nth-child(4) {
   height: 50%;
   width: 75%;
-  background-color: #90EE90; /* Light Green */
+  background-color: #90EE90;
   bottom: -10%;
   left: -18%;
   animation-delay: 1.2s;

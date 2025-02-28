@@ -119,3 +119,41 @@
   color: #FFFFFF; /* White font color */
   background-color: rgb(8, 98, 106); /* Solid blue on hover */
 }
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .edu-container h1 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .edu-content {
+    flex-direction: column; /* Stack content vertically */
+    width: 100%; /* Full width */
+    margin-left: 0; /* Remove left margin */
+  }
+
+  .edu-logo {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 10px; /* Add bottom margin */
+  }
+
+  .edu-logo img {
+    width: 80px; /* Adjust logo size */
+    height: 80px; /* Adjust logo size */
+  }
+}
+
+@media (max-width: 480px) {
+  .edu-container h1 {
+    font-size: 1.5rem; /* Further reduce font size for very small screens */
+  }
+
+  .edu-details h2 {
+    font-size: 1.25rem; /* Reduce font size for smaller screens */
+  }
+
+  .edu-details p, .edu-details ul {
+    font-size: 0.875rem; /* Reduce font size for smaller screens */
+  }
+}

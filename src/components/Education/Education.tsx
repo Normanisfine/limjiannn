@@ -52,7 +52,7 @@ export default function Education() {
           <div>
             <ul>
               <li>Worked as a peer tutor for Calculus III at TRIO program.</li>
-              <li>Involved in project development in the NYU Robotics Club (High-Speed Research Network and Drone subgroups).</li>
+              {/* <li>Involved in project development in the NYU Robotics Club (High-Speed Research Network and Drone subgroups).</li> */}
             </ul>
           </div>
 
