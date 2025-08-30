@@ -11,14 +11,14 @@ export default function Education() {
 
   const courses = [
     { name: 'Machine Learning', gpa: '4.0' },
-    { name: 'Operating System', gpa: 'in progress' },
+    { name: 'Operating System', gpa: '4.0' },
     { name: 'Design and Analysis of Algorithms', gpa: '4.0' },
     { name: 'Object Oriented Programming', gpa: '4.0'},
     { name: 'Data Structure', gpa: '4.0'},
     { name: 'Probability and Statistics', gpa: '4.0'},
-    { name: 'Honors Numerical Analysis', gpa: 'in progess' },
+    { name: 'Honors Numerical Analysis', gpa: '4.0' },
     { name: 'Computer Architecture', gpa: '4.0' },
-    { name: 'Intro to Database', gpa: 'in progress'},
+    { name: 'Intro to Database', gpa: '4.0'},
     { name: 'Odinary Differential Equation', gpa: '4.0'},
     { name: 'Discrete Math', gpa: '4.0'},
     { name: 'Calculus III', gpa: '4.0'},
@@ -46,7 +46,7 @@ export default function Education() {
             <p>Jan. 2024 - May 2026 (Expected)</p>
           </div>
           <p>B.S. in Computer Science ; Minor in Mathematics</p>
-          <p>GPA: 3.978 / 4</p>
+          <p>GPA: 3.983 / 4</p>
           
 
           <div>
