@@ -48,7 +48,7 @@ export default function Contact() {
 
           <div className="mt-8 text-center">
             <p className="text-cyan-200 text-sm">
-              I'm always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
+              I&apos;m always open to discussing new opportunities, collaborations, or just having a chat about technology and innovation.
             </p>
           </div>
         </div>

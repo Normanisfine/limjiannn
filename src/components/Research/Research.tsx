@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { FileText, ExternalLink, Award } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export default function Research() {
   return (

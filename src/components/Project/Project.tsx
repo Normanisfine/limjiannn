@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import { ExternalLink, Github, FileText, Award, Code, Database, Globe, Brain } from 'lucide-react';
+import { Github, Code, Database, Brain } from 'lucide-react';
 import './Project.css';
 
 export default function Project() {
