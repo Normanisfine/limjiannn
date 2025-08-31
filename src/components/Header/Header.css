@@ -1,90 +1,21 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
-  border-radius: 20px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for card effect */
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px); /* Blur effect for plastic wrap appearance */
-  color: black;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  box-sizing: border-box;
-}
+/* Mobile navigation styles only - main styles now use Tailwind CSS */
 
-.header-title {
-  margin: 0;
-  font-size: 1.25rem; /* Adjust the font size as needed */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
-  font-weight: bold;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.header-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 3rem;
-  margin: 0;
-  padding: 0;
-}
-
-.header-nav a {
-  position: relative;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.header-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: currentColor;
-  transition: width 0.4s ease, right 0.4s ease;
-}
-
-.header-nav a:hover::after {
-  width: 100%;
-  right: 0;
-}
-
-.header-nav a:hover {
-  color: rgb(3, 26, 35); /* Change color on hover */
+.header-nav {
+  /* Base styles for desktop */
 }
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 1024px) {
-  .nav-toggle {
-    display: block;
-  }
-
   .header-nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown effect */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px); /* Blur effect for plastic wrap appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     display: none;
     flex-direction: column;
     width: 100%;
@@ -103,17 +34,13 @@
   }
 
   .header-nav a {
-    font-size: 1rem; /* Adjust the font size for smaller screens */
+    font-size: 1rem;
     padding: 10px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .header-title {
-    font-size: 1.25rem; /* Further adjust the font size for very small screens */
-  }
-
   .header-nav a {
-    font-size: 0.875rem; /* Further adjust the font size for very small screens */
+    font-size: 0.875rem;
   }
 }

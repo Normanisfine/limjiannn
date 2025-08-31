@@ -31,19 +31,29 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header">
-      <h1 className="header-title" onClick={handleTitleClick}>Mingjian Li</h1>
-      <button className="nav-toggle" onClick={toggleNav}>
+    <header className="flex justify-between items-center p-5 bg-white/10 rounded-[20px] shadow-lg border border-white/20 backdrop-blur-sm text-cyan-100 fixed top-0 w-full z-10 box-border">
+      <h1 
+        className="m-0 text-xl md:text-2xl cursor-pointer transition-all duration-300 font-extrabold text-cyan-100 hover:text-cyan-300" 
+        onClick={handleTitleClick}
+      >
+        Mingjian Li
+      </h1>
+      
+      <button 
+        className="hidden text-2xl bg-transparent border-none cursor-pointer text-cyan-100 md:hidden" 
+        onClick={toggleNav}
+      >
         ☰
       </button>
+      
       <nav ref={navRef} className={`header-nav ${isNavOpen ? 'open' : ''}`}>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#internship">Internship</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul className="list-none flex gap-12 m-0 p-0">
+          <li><a href="#about" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">About</a></li>
+          <li><a href="#education" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">Education</a></li>
+          <li><a href="#research" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">Research</a></li>
+          <li><a href="#internship" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">Internship</a></li>
+          <li><a href="#projects" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">Projects</a></li>
+          <li><a href="#contact" className="relative text-cyan-100 no-underline text-xl font-bold hover:text-cyan-300 transition-colors duration-300">Contact</a></li>
         </ul>
       </nav>
     </header>
