@@ -76,7 +76,7 @@ export default function About() {
         <div className="mt-5 max-w-full lg:max-w-[700px] text-base md:text-lg lg:text-xl flex flex-col gap-4 text-center lg:text-left order-2 lg:order-2">
           <p className="text-cyan-100 font-semibold">Hi! I am Mingjian Li (李明键).</p>
           <p className="text-cyan-200 font-medium">
-            I am currently a junior student at NYU Tandon, majoring in Computer Science and minoring in Mathematics. 
+            I am currently a senior student at NYU Tandon, majoring in Computer Science and minoring in Mathematics. 
             I am passionate about and have experience in 3D Reconstruction, Full-stack Development, Machine Learning, and Data Science.
           </p>
           <p className="text-cyan-200 font-medium">Before I transferred to NYU, I was studying Accounting at SUFE.</p>
