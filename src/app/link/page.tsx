@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function LinkPage() {
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center p-4">
@@ -14,12 +16,12 @@ export default function LinkPage() {
           <h1 className="text-2xl md:text-3xl font-bold text-white">
             MRI Final Presentation
           </h1>
-          <a
+          <Link
             href="/"
             className="text-blue-400 hover:text-blue-300 transition-colors"
           >
             ← Back to Home
-          </a>
+          </Link>
         </div>
 
         <div className="text-white">
