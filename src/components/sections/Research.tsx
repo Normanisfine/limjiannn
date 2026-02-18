@@ -61,13 +61,16 @@ export default function Research() {
                             {danceVideos.map((video) => (
                                 <div key={video.name} className="flex-shrink-0 w-64 md:w-80">
                                     <video
-                                        src={video.src}
                                         autoPlay
                                         loop
                                         muted
                                         playsInline
                                         className="w-full h-auto rounded-lg border border-white/10 shadow-lg"
-                                    />
+                                    >
+                                        <source src={video.src} type="video/webm" />
+                                        <source src={video.src.replace('.webm', '.mp4')} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
                                     <p className="text-sm text-foreground/60 mt-2 text-center">{video.name.replace(/_/g, ' ')}</p>
                                 </div>
                             ))}
