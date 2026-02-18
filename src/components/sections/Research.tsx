@@ -63,10 +63,11 @@ export default function Research() {
                                     <div className="relative w-full" style={{ aspectRatio: '5/8' }}>
                                         <video
                                             src={video.src}
+                                            poster={video.src.replace('.mp4', '_poster.jpg')}
                                             loop
                                             muted
                                             playsInline
-                                            preload="auto"
+                                            preload="metadata"
                                             controls
                                             controlsList="nodownload"
                                             className="absolute inset-0 w-full h-full object-contain rounded-lg border border-white/10 shadow-lg bg-background"
