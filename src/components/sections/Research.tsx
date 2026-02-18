@@ -63,11 +63,12 @@ export default function Research() {
                                     <div className="relative w-full" style={{ aspectRatio: '5/8' }}>
                                         <video
                                             src={video.src}
-                                            autoPlay
                                             loop
                                             muted
                                             playsInline
-                                            preload="metadata"
+                                            preload="auto"
+                                            controls
+                                            controlsList="nodownload"
                                             className="absolute inset-0 w-full h-full object-contain rounded-lg border border-white/10 shadow-lg bg-background"
                                         />
                                     </div>
