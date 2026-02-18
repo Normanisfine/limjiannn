@@ -60,14 +60,17 @@ export default function Research() {
                         <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent">
                             {danceVideos.map((video) => (
                                 <div key={video.name} className="flex-shrink-0 w-64 md:w-80">
-                                    <video
-                                        src={video.src}
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                        className="w-full h-auto rounded-lg border border-white/10 shadow-lg"
-                                    />
+                                    <div className="relative w-full" style={{ aspectRatio: '5/8' }}>
+                                        <video
+                                            src={video.src}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            preload="metadata"
+                                            className="absolute inset-0 w-full h-full object-contain rounded-lg border border-white/10 shadow-lg bg-background"
+                                        />
+                                    </div>
                                     <p className="text-sm text-foreground/60 mt-2 text-center">{video.name.replace(/_/g, ' ')}</p>
                                 </div>
                             ))}
