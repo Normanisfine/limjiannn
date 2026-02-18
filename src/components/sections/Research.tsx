@@ -7,12 +7,12 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 export default function Research() {
     const danceVideos = [
-        { name: 'AttitudePromenade', src: '/assets/dance_videos/AttitudePromenade.webm' },
-        { name: 'BartSimpson', src: '/assets/dance_videos/BartSimpson.webm' },
-        { name: 'BiancaGolden_Chimee', src: '/assets/dance_videos/BiancaGolden_Chimee.webm' },
-        { name: 'Chacha', src: '/assets/dance_videos/Chacha.webm' },
-        { name: 'HouseFootworkAdvanced', src: '/assets/dance_videos/HouseFootworkAdvanced.webm' },
-        { name: 'RobertRubama_RussiaCostume', src: '/assets/dance_videos/RobertRubama_RussiaCostume.webm' },
+        { name: 'AttitudePromenade', src: '/assets/dance_videos/AttitudePromenade.mp4' },
+        { name: 'BartSimpson', src: '/assets/dance_videos/BartSimpson.mp4' },
+        { name: 'BiancaGolden_Chimee', src: '/assets/dance_videos/BiancaGolden_Chimee.mp4' },
+        { name: 'Chacha', src: '/assets/dance_videos/Chacha.mp4' },
+        { name: 'HouseFootworkAdvanced', src: '/assets/dance_videos/HouseFootworkAdvanced.mp4' },
+        { name: 'RobertRubama_RussiaCostume', src: '/assets/dance_videos/RobertRubama_RussiaCostume.mp4' },
     ];
 
     return (
@@ -61,16 +61,13 @@ export default function Research() {
                             {danceVideos.map((video) => (
                                 <div key={video.name} className="flex-shrink-0 w-64 md:w-80">
                                     <video
+                                        src={video.src}
                                         autoPlay
                                         loop
                                         muted
                                         playsInline
                                         className="w-full h-auto rounded-lg border border-white/10 shadow-lg"
-                                    >
-                                        <source src={video.src} type="video/webm" />
-                                        <source src={video.src.replace('.webm', '.mp4')} type="video/mp4" />
-                                        Your browser does not support the video tag.
-                                    </video>
+                                    />
                                     <p className="text-sm text-foreground/60 mt-2 text-center">{video.name.replace(/_/g, ' ')}</p>
                                 </div>
                             ))}
