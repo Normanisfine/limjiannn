@@ -7,12 +7,12 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 
 export default function Research() {
     const danceVideos = [
-        { name: 'AttitudePromenade', src: '/assets/dance_videos/AttitudePromenade.mp4' },
-        { name: 'BartSimpson', src: '/assets/dance_videos/BartSimpson.mp4' },
-        { name: 'BiancaGolden_Chimee', src: '/assets/dance_videos/BiancaGolden_Chimee.mp4' },
-        { name: 'Chacha', src: '/assets/dance_videos/Chacha.mp4' },
-        { name: 'HouseFootworkAdvanced', src: '/assets/dance_videos/HouseFootworkAdvanced.mp4' },
-        { name: 'RobertRubama_RussiaCostume', src: '/assets/dance_videos/RobertRubama_RussiaCostume.mp4' },
+        { name: 'AttitudePromenade', src: '/assets/dance_videos/AttitudePromenade.webm' },
+        { name: 'BartSimpson', src: '/assets/dance_videos/BartSimpson.webm' },
+        { name: 'BiancaGolden_Chimee', src: '/assets/dance_videos/BiancaGolden_Chimee.webm' },
+        { name: 'Chacha', src: '/assets/dance_videos/Chacha.webm' },
+        { name: 'HouseFootworkAdvanced', src: '/assets/dance_videos/HouseFootworkAdvanced.webm' },
+        { name: 'RobertRubama_RussiaCostume', src: '/assets/dance_videos/RobertRubama_RussiaCostume.webm' },
     ];
 
     return (
@@ -63,13 +63,11 @@ export default function Research() {
                                     <div className="relative w-full" style={{ aspectRatio: '5/8' }}>
                                         <video
                                             src={video.src}
-                                            poster={video.src.replace('.mp4', '_poster.jpg')}
+                                            autoPlay
                                             loop
                                             muted
                                             playsInline
-                                            preload="metadata"
-                                            controls
-                                            controlsList="nodownload"
+                                            preload="auto"
                                             className="absolute inset-0 w-full h-full object-contain rounded-lg border border-white/10 shadow-lg bg-background"
                                         />
                                     </div>
