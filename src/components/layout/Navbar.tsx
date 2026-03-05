@@ -29,8 +29,10 @@ export default function Navbar() {
 
     const scrollToSection = (id: string) => {
         setIsOpen(false);
-        const event = new CustomEvent('scroll-to-section', { detail: id });
-        window.dispatchEvent(event);
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
 
     return (

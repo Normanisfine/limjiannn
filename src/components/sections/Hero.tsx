@@ -6,8 +6,10 @@ import { ArrowDown, Box, Brain, Theater } from 'lucide-react';
 
 export default function Hero() {
     const scrollToSection = (id: string) => {
-        const event = new CustomEvent('scroll-to-section', { detail: id });
-        window.dispatchEvent(event);
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
 
     const containerVariants = {
@@ -32,7 +34,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="h-screen w-full flex flex-col items-center justify-center text-center px-4 relative">
+        <section id="hero" className="h-screen w-full flex flex-col items-center justify-center text-center px-4 relative">
             <div className="absolute inset-0 bg-transparent z-0"></div>
 
             <motion.div
