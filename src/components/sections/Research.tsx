@@ -23,6 +23,28 @@ export default function Research() {
 
             <div className="max-w-7xl mx-auto">
 
+                {/* Publications */}
+                <div id="publications" className="mb-16 pb-16 border-b border-white/10">
+                    <h3 className="text-2xl font-bold text-secondary mb-6 uppercase tracking-wider">Publications</h3>
+                    <div className="space-y-4">
+                        <div className="flex gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
+                            <span className="text-primary font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
+                            <div>
+                                <p className="text-base text-foreground/90 leading-relaxed">
+                                    <span className="font-semibold text-foreground">Mingjian Li</span>*, Shihang Wei*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
+                                    <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
+                                    <span className="text-primary font-semibold">CVPR 2026 3DMV Workshop.</span>
+                                </p>
+                                <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
+                                <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-medium mt-2">
+                                    <ExternalLink size={14} /> Project Page
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Main Project */}
                 <div id="research-3d" className="w-full space-y-8">
                     <h3 className="text-3xl font-bold text-primary mb-4 drop-shadow-lg">
@@ -30,11 +52,14 @@ export default function Research() {
                     </h3>
 
                     <div className="flex flex-wrap gap-3 mb-6">
-                        {['Computer Vision', '3DGS', 'PyTorch', 'Camera Calibration', 'Unity AR/VR', 'Unreal Engine' ].map(tag => (
+                        {['Computer Vision', '3DGS', 'PyTorch', 'Camera Calibration', 'Unity AR/VR', 'Unreal Engine'].map(tag => (
                             <span key={tag} className="px-3 py-1 bg-primary/10 text-primary text-xs uppercase tracking-wider border border-primary/20">
                                 {tag}
                             </span>
                         ))}
+                        <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-xs uppercase tracking-wider border border-yellow-400/30 font-semibold">
+                            Publication
+                        </span>
                     </div>
 
                     <p className="text-lg text-foreground/80 font-light leading-relaxed mb-4">
@@ -50,9 +75,22 @@ export default function Research() {
                     </p>
 
                     <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium border-b border-yellow-400/30 hover:border-yellow-300/50 pb-1 mb-8">
+                        className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium border-b border-yellow-400/30 hover:border-yellow-300/50 pb-1 mb-6">
                         <ExternalLink size={18} /> View DanceNet3D Dataset
                     </a>
+
+                    {/* Publication citation */}
+                    <div className="flex gap-4 p-5 bg-yellow-400/5 rounded-xl border border-yellow-400/20 mb-8">
+                        <span className="text-yellow-400 font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
+                        <div>
+                            <p className="text-sm text-foreground/90 leading-relaxed">
+                                <span className="font-semibold text-foreground">Mingjian Li</span>*, Shihang Wei*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
+                                <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
+                                <span className="text-yellow-400 font-semibold">CVPR 2026 3DMV Workshop.</span>
+                            </p>
+                            <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
+                        </div>
+                    </div>
 
                     {/* Dancing Human Videos - Horizontal Scroll */}
                     <div className="mb-8">

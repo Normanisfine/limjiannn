@@ -7,6 +7,15 @@ import { motion } from 'framer-motion';
 
 const projects = [
     {
+        title: 'SO-ARM101 Robot Learning Pipeline',
+        desc: '3D printed and assembled an SO-ARM101 robotic arm, calibrated Feetech servo motors, and configured leader-follower teleoperation. Building a robot learning pipeline with teleoperation data collection for policy training and sim-to-real experimentation in Isaac Lab.',
+        tags: ['Robotics', 'Isaac Lab', 'Python', 'Teleoperation', 'Sim-to-Real', 'Servo Control'],
+        link: null,
+        icon: <Code size={32} className="text-cyan-400" />,
+        type: 'Robotics',
+        date: 'Spring 2026'
+    },
+    {
         title: 'ML Systems Implementation',
         desc: 'Implemented GPU tensor operators (CUDA/C++) and MLP with auto-differentiation via pybind11. Achieved 97% MNIST accuracy with optimized kernels on NVIDIA T4 GPUs.',
         tags: ['CUDA', 'C++', 'Python', 'PyTorch', 'pybind11'],

@@ -21,8 +21,9 @@ export default function About() {
                         Hi! I am Mingjian Li (李明键).
                     </h3>
                     <p className="text-xl text-foreground/90 leading-relaxed font-light">
-                        I am currently a senior student at <span className="text-secondary font-bold">NYU Tandon</span>, majoring in Computer Science and minoring in Mathematics.
-                        I am passionate about and have experience in <span className="text-accent font-medium">3D Reconstruction, MRI with Deep Learning, Neuroscience, Full-stack Development, Machine Learning, and Data Science.</span>
+                        I am a <span className="text-secondary font-bold">NYU Tandon</span> CS graduate (May 2026) and incoming <span className="text-primary font-bold">UPenn CIS</span> MSE student (Fall 2026).
+                        I am passionate about and have experience in <span className="text-accent font-medium">3D Reconstruction, MRI with Deep Learning, Full-stack Development, and Machine Learning.</span>
+                        I have also developed a growing research interest in <span className="text-primary font-medium">Robotics</span> — from building robot arms to sim-to-real learning pipelines.
                     </p>
                     <p className="text-xl text-foreground/90 leading-relaxed font-light">
                         Before transferring to NYU, I studied Accounting at SUFE. Outside of tech, I love cats, Broadway shows, hiking, photography, board games, and ping-pong!

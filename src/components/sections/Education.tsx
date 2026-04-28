@@ -38,6 +38,21 @@ export default function Education() {
             </h2>
 
             <div className="space-y-12 max-w-5xl mx-auto w-full">
+                {/* UPenn */}
+                <div className="flex flex-col md:flex-row gap-8 items-start relative z-10 p-6 md:p-0 rounded-xl transition-colors duration-300">
+                    <div className="w-24 h-24 flex-shrink-0 bg-white rounded-lg p-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                        <Image src="/assets/upenn_logo.png" alt="UPenn" width={100} height={100} className="object-contain w-full h-full" />
+                    </div>
+                    <div className="flex-grow">
+                        <div className="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 className="text-3xl font-bold text-primary drop-shadow-md">University of Pennsylvania</h3>
+                            <span className="text-foreground/60 font-mono text-lg">Aug 2026 (Incoming)</span>
+                        </div>
+                        <p className="text-xl font-semibold mb-2">MSE in Computer and Information Science</p>
+                        <p className="text-accent font-semibold text-lg">Graduate School of Engineering and Applied Science</p>
+                    </div>
+                </div>
+
                 {/* NYU */}
                 <div className="flex flex-col md:flex-row gap-8 items-start relative z-10 p-6 md:p-0 rounded-xl transition-colors duration-300">
                     <div className="w-24 h-24 flex-shrink-0 bg-white rounded-lg p-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">

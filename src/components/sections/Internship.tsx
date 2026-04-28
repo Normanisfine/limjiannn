@@ -6,11 +6,25 @@ import SectionWrapper from '@/components/ui/SectionWrapper';
 
 const internships = [
     {
+        title: 'Robotics Software Engineer Intern',
+        company: 'Zhiyuan Company',
+        location: 'Chengdu, China',
+        duration: 'Dec 2025 – Feb 2026',
+        logo: null,
+        logoFallback: 'ZY',
+        responsibilities: [
+            'Built vehicle detection and high-precision localization module for automated parking system, fusing RGB camera data with Livox Mid-360 LiDAR point cloud to estimate 3D vehicle position and orientation.',
+            'Developed modular ROS-based software with YOLO real-time detection, achieving ±5cm localization accuracy in dynamic parking environments.',
+        ],
+        tags: ['ROS', 'LiDAR', 'YOLO', 'C++', 'Python', 'SLAM', 'Point Cloud']
+    },
+    {
         title: 'Software Engineer Intern',
         company: 'SeeM(useums)',
         location: 'Pittsburgh',
         duration: 'Dec 2024 – May 2025',
         logo: '/assets/seemuseums_logo.jpeg',
+        logoFallback: null,
         responsibilities: [
             'Frontend: React, Next.js, Redux. Built authentication, project management.',
             'Backend: Python Flask, Docker, AWS. Scalable deployment.',
@@ -24,6 +38,7 @@ const internships = [
         location: 'Remote',
         duration: 'Sep 2023 – Jan 2024',
         logo: '/assets/wq_logo.png',
+        logoFallback: null,
         responsibilities: [
             'Built market-neutral strategy based on cross-field data and sentiment.',
             'Refined strategy to improve Sharpe ratio, turnover, and fitness.',
@@ -36,6 +51,7 @@ const internships = [
         location: 'Shanghai, China',
         duration: 'Jan 2023 – Feb 2023',
         logo: '/assets/kpmg_logo.jpeg',
+        logoFallback: null,
         responsibilities: [
             'Conducted risk assessment and substantive procedures.',
             'Verified integrity of assets, payroll, and expense accounts.',
@@ -66,7 +82,11 @@ export default function Internship() {
 
                             {/* Logo Node */}
                             <div className="absolute left-[4px] md:left-1/2 top-0 w-12 h-12 rounded-full border-4 border-background bg-zinc-900 z-10 flex items-center justify-center md:-translate-x-1/2 shadow-[0_0_15px_rgba(255,255,255,0.2)] md:-ml-6">
-                                <Image src={role.logo} alt={role.company} width={48} height={48} className="object-cover rounded-full" />
+                                {role.logo ? (
+                                    <Image src={role.logo} alt={role.company} width={48} height={48} className="object-cover rounded-full" />
+                                ) : (
+                                    <span className="text-xs font-bold text-primary">{role.logoFallback}</span>
+                                )}
                             </div>
 
                             {/* Content */}

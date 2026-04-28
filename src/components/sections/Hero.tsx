@@ -74,7 +74,7 @@ export default function Hero() {
                     </h3>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
                         <button
-                            onClick={() => scrollToSection('research-3d')}
+                            onClick={() => scrollToSection('publications')}
                             className="group px-8 py-4 bg-gradient-to-r from-primary/20 to-secondary/20 hover:from-primary/30 hover:to-secondary/30 text-foreground border border-primary/50 rounded-xl font-semibold transition-all hover:scale-105 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.3)] flex items-center gap-3"
                         >
                             <Box size={20} className="text-primary group-hover:rotate-12 transition-transform" />
