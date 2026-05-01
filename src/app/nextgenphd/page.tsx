@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 
 
 const SLIDES_PRESENTATION_URL =
-    'https://docs.google.com/presentation/d/166HJ1pGKcy1NiK0E5AmAsWqOHwh5KdPuuUFcjTd5Fm8/edit?usp=sharing';
+    'https://docs.google.com/presentation/d/1OFJThx-hf_BWA2lkCD6mzuvSoH3heb5oIdVOFNOSw7c/edit?usp=sharing';
 
 const SLIDES_EMBED_URL =
-    'https://docs.google.com/presentation/d/166HJ1pGKcy1NiK0E5AmAsWqOHwh5KdPuuUFcjTd5Fm8/embed';
+    'https://docs.google.com/presentation/d/1OFJThx-hf_BWA2lkCD6mzuvSoH3heb5oIdVOFNOSw7c/embed';
 
 export const metadata: Metadata = {
-    title: 'Adv Seminar | Mingjian Li',
-    description: 'Advanced seminar presentation (Google Slides)',
+    title: 'NextGen PhD | Mingjian Li',
+    description: 'NextGen PhD presentation (Google Slides)',
 };
 
-export default function AdvPage() {
+export default function NextGenPhdPage() {
     return (
         <main className="min-h-screen pb-16 pt-24 md:pt-28">
             <div className="container mx-auto max-w-6xl px-4 md:px-8">
@@ -21,7 +21,7 @@ export default function AdvPage() {
                         Presentation
                     </p>
                     <h1 className="mb-4 text-3xl font-bold text-glow md:text-4xl">
-                        Adv Seminar
+                        NextGen PhD
                     </h1>
                     <a
                         href={SLIDES_PRESENTATION_URL}
@@ -36,7 +36,7 @@ export default function AdvPage() {
                 <div className="glass-card relative w-full overflow-hidden rounded-xl pt-[56.25%]">
                     <iframe
                         src={SLIDES_EMBED_URL}
-                        title="Adv seminar presentation"
+                        title="NextGen PhD presentation"
                         className="absolute inset-0 h-full w-full border-0"
                         allowFullScreen
                     />
