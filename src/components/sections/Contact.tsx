@@ -2,7 +2,7 @@
 
 import React from 'react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, GraduationCap } from 'lucide-react';
 
 export default function Contact() {
     return (
@@ -34,6 +34,12 @@ export default function Contact() {
                         <a href="https://github.com/Normanisfine" target="_blank" rel="noopener noreferrer"
                             className="p-5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-white/50 hover:text-white text-foreground/50 transition-all hover:scale-110">
                             <Github size={28} />
+                        </a>
+
+                        <a href="https://scholar.google.com/citations?user=w8Brnx0AAAAJ" target="_blank" rel="noopener noreferrer"
+                            aria-label="Google Scholar"
+                            className="p-5 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:border-white/50 hover:text-white text-foreground/50 transition-all hover:scale-110">
+                            <GraduationCap size={28} />
                         </a>
                     </div>
                 </div>

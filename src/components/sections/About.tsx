@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Mail, FileUser, Github, Linkedin } from 'lucide-react';
+import { Mail, FileUser, Github, Linkedin, GraduationCap } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { motion } from 'framer-motion';
 
@@ -37,6 +37,11 @@ export default function About() {
                         <a href="https://github.com/Normanisfine" target="_blank" rel="noopener noreferrer"
                             className="text-gray-300 transition-colors transform hover:scale-110">
                             <Github size={32} />
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=w8Brnx0AAAAJ" target="_blank" rel="noopener noreferrer"
+                            aria-label="Google Scholar"
+                            className="text-yellow-400 transition-colors transform hover:scale-110">
+                            <GraduationCap size={32} />
                         </a>
                         <a href="mailto:limjiannn@gmail.com"
                             className="text-primary transition-colors transform hover:scale-110">

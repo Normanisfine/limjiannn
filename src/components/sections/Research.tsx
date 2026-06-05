@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import SectionWrapper from '@/components/ui/SectionWrapper';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Award } from 'lucide-react';
 
 export default function Research() {
     const danceVideos = [
@@ -30,16 +30,25 @@ export default function Research() {
                         <div className="flex gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
                             <span className="text-primary font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
                             <div>
+                                <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-yellow-400/15 text-yellow-300 text-xs font-bold uppercase tracking-wider border border-yellow-400/40 rounded-full">
+                                    <Award size={12} /> Best Paper Award
+                                </div>
                                 <p className="text-base text-foreground/90 leading-relaxed">
-                                    <span className="font-semibold text-foreground">Mingjian Li</span>*, Shihang Wei*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
+                                    Shihang Wei*, <span className="font-semibold text-foreground">Mingjian Li</span>*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
                                     <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
                                     <span className="text-primary font-semibold">CVPR 2026 3DMV Workshop.</span>
                                 </p>
                                 <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
-                                <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-medium mt-2">
-                                    <ExternalLink size={14} /> Project Page
-                                </a>
+                                <div className="flex flex-wrap items-center gap-4 mt-2">
+                                    <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-medium">
+                                        <ExternalLink size={14} /> Project Page
+                                    </a>
+                                    <a href="https://scholar.google.com/citations?user=w8Brnx0AAAAJ" target="_blank" rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                                        <ExternalLink size={14} /> Google Scholar
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,6 +68,9 @@ export default function Research() {
                         ))}
                         <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-xs uppercase tracking-wider border border-yellow-400/30 font-semibold">
                             Publication
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-400/15 text-yellow-300 text-xs uppercase tracking-wider border border-yellow-400/40 font-semibold rounded-sm">
+                            <Award size={12} /> Best Paper Award
                         </span>
                     </div>
 
@@ -83,8 +95,11 @@ export default function Research() {
                     <div className="flex gap-4 p-5 bg-yellow-400/5 rounded-xl border border-yellow-400/20 mb-8">
                         <span className="text-yellow-400 font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
                         <div>
+                            <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-yellow-400/15 text-yellow-300 text-xs font-bold uppercase tracking-wider border border-yellow-400/40 rounded-full">
+                                <Award size={12} /> Best Paper Award
+                            </div>
                             <p className="text-sm text-foreground/90 leading-relaxed">
-                                <span className="font-semibold text-foreground">Mingjian Li</span>*, Shihang Wei*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
+                                Shihang Wei*, <span className="font-semibold text-foreground">Mingjian Li</span>*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
                                 <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
                                 <span className="text-yellow-400 font-semibold">CVPR 2026 3DMV Workshop.</span>
                             </p>
