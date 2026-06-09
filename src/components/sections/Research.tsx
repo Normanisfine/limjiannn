@@ -40,7 +40,7 @@ export default function Research() {
                                 </p>
                                 <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
                                 <div className="flex flex-wrap items-center gap-4 mt-2">
-                                    <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
+                                    <a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer"
                                         className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-medium">
                                         <ExternalLink size={14} /> Project Page
                                     </a>
@@ -86,7 +86,7 @@ export default function Research() {
                         Unreal Engine plugin with native VR support for immersive 3D reconstruction visualization, featuring high-performance rendering and interactive VR display capabilities for enhanced spatial understanding.
                     </p>
 
-                    <a href="https://nyuvideolab.github.io/DanceNet3D/" target="_blank" rel="noopener noreferrer"
+                    <a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium border-b border-yellow-400/30 hover:border-yellow-300/50 pb-1 mb-6">
                         <ExternalLink size={18} /> View DanceNet3D Dataset
                     </a>
