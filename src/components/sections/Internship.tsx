@@ -1,9 +1,4 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-
 const internships = [
     {
         title: 'Robotics Software Engineer Intern',
@@ -61,61 +56,5 @@ const internships = [
 ];
 
 export default function Internship() {
-    return (
-        <SectionWrapper id="internship" className="flex flex-col justify-center container mx-auto px-4 py-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-20 text-left text-glow pl-4 md:pl-12 border-l-4 border-l-accent w-full">
-                INTERNSHIP
-            </h2>
-
-            <div className="relative max-w-5xl mx-auto w-full">
-                {/* Central Line */}
-                <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-white/10 md:-translate-x-1/2"></div>
-
-                <div className="space-y-20">
-                    {internships.map((role, idx) => (
-                        <div key={idx} className={`relative flex flex-col md:flex-row gap-8 md:gap-0 items-start md:items-center w-full ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-
-                            {/* Timestamp for Desktop */}
-                            <div className={`hidden md:block w-1/2 px-12 ${idx % 2 === 0 ? 'text-left' : 'text-right'}`}>
-                                <span className="text-foreground/40 font-mono text-sm">{role.duration}</span>
-                            </div>
-
-                            {/* Logo Node */}
-                            <div className="absolute left-[4px] md:left-1/2 top-0 w-12 h-12 rounded-full border-4 border-background bg-zinc-900 z-10 flex items-center justify-center md:-translate-x-1/2 shadow-[0_0_15px_rgba(255,255,255,0.2)] md:-ml-6">
-                                {role.logo ? (
-                                    <Image src={role.logo} alt={role.company} width={48} height={48} className="object-cover rounded-full" />
-                                ) : (
-                                    <span className="text-xs font-bold text-primary">{role.logoFallback}</span>
-                                )}
-                            </div>
-
-                            {/* Content */}
-                            <div className={`w-full md:w-1/2 pl-20 md:pl-12 pr-0 ${idx % 2 === 0 ? 'md:pr-12 md:pl-0 md:text-right' : 'md:text-left'}`}>
-                                <div className="group">
-                                    <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors">{role.company}</h3>
-                                    <h4 className="text-lg font-medium text-primary mb-2">{role.title}</h4>
-                                    <p className="md:hidden text-foreground/40 font-mono text-xs mb-4">{role.duration}</p>
-
-                                    <ul className={`list-none space-y-2 text-foreground/80 font-light text-sm mb-4 ${idx % 2 === 0 ? 'md:flex md:flex-col md:items-end' : ''}`}>
-                                        {role.responsibilities.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
-
-                                    <div className={`flex flex-wrap gap-2 ${idx % 2 === 0 ? 'md:justify-end' : ''}`}>
-                                        {role.tags.map(tag => (
-                                            <span key={tag} className="text-[10px] px-2 py-1 border border-white/10 rounded text-foreground/50 uppercase tracking-widest">
-                                                {tag}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </SectionWrapper>
-    );
+ return <section id="internship" className="section shell"><div className="section-heading"><h2>Experience</h2><p>Research, engineering, and everything in between.</p></div><div className="experience-list">{internships.map(role => <article key={role.company} className="experience-row"><div className="experience-date">{role.duration}<br/><span>{role.location}</span></div><div><div className="company-line">{role.logo ? <Image src={role.logo} alt="" width={44} height={44}/> : <span className="logo-fallback">{role.logoFallback}</span>}<h3>{role.company}</h3></div><h4>{role.title}</h4><ul>{role.responsibilities.map(item => <li key={item}>{item}</li>)}</ul><p className="tool-line">{role.tags.join(' · ')}</p></div></article>)}</div></section>;
 }

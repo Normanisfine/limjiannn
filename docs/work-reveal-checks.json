@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Scroll reveal tracks 0 at 390",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0 at 390",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 0.5 at 390",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0.5 at 390",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 1 at 390",
+    "pass": true
+  },
+  {
+    "name": "No overflow 1 at 390",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 0.3 at 390",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0.3 at 390",
+    "pass": true
+  },
+  {
+    "name": "Project link usable 390",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion uses normal layout 390",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 0 at 1440",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0 at 1440",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 0.5 at 1440",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0.5 at 1440",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 1 at 1440",
+    "pass": true
+  },
+  {
+    "name": "No overflow 1 at 1440",
+    "pass": true
+  },
+  {
+    "name": "Scroll reveal tracks 0.3 at 1440",
+    "pass": true
+  },
+  {
+    "name": "No overflow 0.3 at 1440",
+    "pass": true
+  },
+  {
+    "name": "Project link usable 1440",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion uses normal layout 1440",
+    "pass": true
+  },
+  {
+    "name": "Projects visible without JavaScript",
+    "pass": true
+  }
+]

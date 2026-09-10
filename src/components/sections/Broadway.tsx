@@ -1,11 +1,6 @@
-'use client';
-
-import React, { useState } from 'react';
+ 'use client';
+import {useRef, useState} from 'react';
 import Image from 'next/image';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import { motion } from 'framer-motion';
-import { Theater, X, Music, Drama, Star } from 'lucide-react';
-
 const broadwayShows = [
     { src: '/assets/broadway/magnets.jpeg', title: 'Broadway Magnets', venue: 'Collection' },
     { src: '/assets/broadway/wicked.jpeg', title: 'Wicked', venue: 'Gershwin Theatre' },
@@ -30,219 +25,98 @@ const broadwayShows = [
 ];
 
 export default function Broadway() {
-    const [selectedImage, setSelectedImage] = useState<{ src: string; title: string; venue: string } | null>(null);
-
-    return (
-        <SectionWrapper id="broadway" className="flex flex-col justify-center container mx-auto px-4 py-16">
-            <div className="text-center mb-16">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                    <Theater className="text-accent" size={40} />
-                    <h2 className="text-3xl md:text-5xl font-bold text-glow">
-                        BROADWAY
-                    </h2>
-                </div>
-                <p className="text-lg text-foreground/70 font-light max-w-2xl mx-auto">
-                    A glimpse into my love for theater and the magic of Broadway shows
-                </p>
-            </div>
-
-            {/* Shows I've Watched */}
-            <div className="max-w-5xl mx-auto mb-16">
-                <h3 className="text-3xl font-bold text-center text-primary mb-12">Shows I've Watched</h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {/* Musicals */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-gradient-to-br from-primary/5 to-transparent p-6 rounded-2xl border border-white/5"
-                    >
-                        <div className="flex items-center gap-3 mb-6">
-                            <Music className="text-primary" size={28} />
-                            <h4 className="text-2xl font-bold text-primary">Musicals</h4>
-                        </div>
-                        <ul className="space-y-2.5">
-                            <li className="flex items-start gap-3 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-yellow-400 mt-1">⭐</span>
+ const gallery = useRef<HTMLDivElement>(null);
+ const dialog = useRef<HTMLDialogElement>(null);
+ const [selected, setSelected] = useState(broadwayShows[0]);
+ const scroll = (direction:number) => gallery.current?.scrollBy({left:direction * gallery.current.clientWidth * .8, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+ return <section id="broadway" className="broadway section"><div className="shell"><div className="section-heading"><div><p className="meta">Away from the keyboard</p><h2>A seat in the theatre.</h2></div><p>A glimpse into my love for theater and the magic of Broadway shows</p></div><div className="broadway-intro"><p>Broadway</p><p>All-time favorite <strong>Hadestown ♡</strong></p></div><div className="gallery-controls"><h3>Photo gallery</h3><div><button onClick={() => scroll(-1)} aria-label="Previous Broadway photos">←</button><button onClick={() => scroll(1)} aria-label="Next Broadway photos">→</button></div></div><div className="gallery" ref={gallery} tabIndex={0} aria-label="Broadway photo gallery">{broadwayShows.map((show,index) => <figure key={show.src}><button aria-label={`Enlarge ${show.title} photo ${index+1}`} onClick={() => {setSelected(show);dialog.current?.showModal();}}><Image src={show.src} alt={show.title} width={480} height={600} loading="lazy"/></button><figcaption><strong>{show.title}</strong><span>{show.venue || 'Broadway memories'}</span></figcaption></figure>)}</div><details className="show-list"><summary>Shows I&apos;ve Watched <span aria-hidden="true">＋</span></summary><div><section><h3>Musicals</h3><ul>
+                            <li>
+                                <span>⭐</span>
                                 <div>
-                                    <span className="font-semibold text-yellow-400">Hadestown</span>
-                                    <span className="text-xs text-foreground/50 ml-2">(All-time favorite)</span>
+                                    <span>Hadestown</span>
+                                    <span>(All-time favorite)</span>
                                 </div>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Maybe Happy Ending</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
-                                <span>Gypsy <span className="text-xs text-foreground/50">(starring Audra McDonald)</span></span>
+                            <li>
+                                <span>♪</span>
+                                <span>Gypsy <span>(starring Audra McDonald)</span></span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Sunset Boulevard</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Death Becomes Her</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>MJ The Musical</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Wicked</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Hamilton</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Heathers: The Musical</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Cabaret at the Kit Kat Club</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Moulin Rouge! The Musical</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Dead Outlaw</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Floyd Collins</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Aladdin</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>The Great Gatsby</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Real Women Have Curves: The Musical</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
-                                <span>Hell's Kitchen</span>
+                            <li>
+                                <span>♪</span>
+                                <span>Hell&apos;s Kitchen</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-primary mt-1">♪</span>
+                            <li>
+                                <span>♪</span>
                                 <span>Just in Time</span>
                             </li>
-                        </ul>
-                    </motion.div>
-
-                    {/* Plays */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-gradient-to-br from-secondary/5 to-transparent p-6 rounded-2xl border border-white/5"
-                    >
-                        <div className="flex items-center gap-3 mb-6">
-                            <Drama className="text-secondary" size={28} />
-                            <h4 className="text-2xl font-bold text-secondary">Plays</h4>
-                        </div>
-                        <ul className="space-y-2.5">
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-secondary mt-1">▸</span>
+                        </ul></section><section><h3>Plays</h3><ul>
+                            <li>
+                                <span>▸</span>
                                 <span>The Roommate</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-secondary mt-1">▸</span>
+                            <li>
+                                <span>▸</span>
                                 <span>Stranger Things: The First Shadow</span>
                             </li>
-                            <li className="flex items-start gap-2 text-foreground/80 hover:text-foreground transition-colors">
-                                <span className="text-secondary mt-1">▸</span>
+                            <li>
+                                <span>▸</span>
                                 <span>Harry Potter and the Cursed Child</span>
                             </li>
-                        </ul>
-
-                        {/* All-time Favorite Callout */}
-                        <div className="mt-8 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
-                            <div className="flex items-center gap-2 mb-2">
-                                <Star className="text-yellow-400" size={20} />
-                                <p className="text-sm font-bold text-yellow-400 uppercase tracking-wide">All-Time Favorite</p>
-                            </div>
-                            <p className="text-2xl font-bold text-foreground">Hadestown</p>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-
-            {/* Photo Gallery - Horizontal Scroll */}
-            <div className="mb-16">
-                <h3 className="text-2xl font-bold text-center text-secondary mb-8">Photo Gallery</h3>
-                <div className="relative max-w-7xl mx-auto">
-                    <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent snap-x snap-mandatory">
-                        {broadwayShows.map((show, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.02 }}
-                                whileHover={{ scale: 1.05 }}
-                                className="relative flex-shrink-0 w-72 h-72 md:w-80 md:h-80 rounded-xl overflow-hidden border border-white/10 shadow-lg cursor-pointer group snap-center"
-                                onClick={() => setSelectedImage(show)}
-                            >
-                                <Image
-                                    src={show.src}
-                                    alt={show.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-4">
-                                    <p className="text-white font-bold text-base text-center">{show.title}</p>
-                                    {show.venue && <p className="text-white/70 text-sm text-center">{show.venue}</p>}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                    <p className="text-center text-foreground/40 text-sm mt-4">← Scroll to explore more photos →</p>
-                </div>
-            </div>
-
-            {/* Lightbox Modal */}
-            {selectedImage && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    <button
-                        className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        <X size={32} />
-                    </button>
-                    <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex flex-col items-center justify-center">
-                        <div className="relative w-full h-full">
-                            <Image
-                                src={selectedImage.src}
-                                alt={selectedImage.title}
-                                fill
-                                className="object-contain"
-                            />
-                        </div>
-                        <div className="mt-4 text-center">
-                            <p className="text-white font-bold text-xl">{selectedImage.title}</p>
-                            {selectedImage.venue && <p className="text-white/70 text-base">{selectedImage.venue}</p>}
-                        </div>
-                    </div>
-                </motion.div>
-            )}
-        </SectionWrapper>
-    );
+                        </ul></section></div></details><dialog ref={dialog} className="photo-dialog" aria-label={selected.title} onClick={event => {if(event.target === event.currentTarget)dialog.current?.close();}}><button className="dialog-close" autoFocus onClick={() => dialog.current?.close()} aria-label="Close photo">×</button><Image src={selected.src} alt={selected.title} width={1000} height={1200}/><p>{selected.title} · {selected.venue}</p></dialog></div></section>;
 }

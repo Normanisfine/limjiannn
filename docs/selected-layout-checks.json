@@ -1,0 +1,257 @@
+[
+  {
+    "width": 320,
+    "overflow": false,
+    "soArm": false,
+    "titles": [
+      "DanceNet3D",
+      "World Action Models",
+      "MRI Reconstruction"
+    ],
+    "cards": [
+      {
+        "href": "#research-3d",
+        "rect": {
+          "x": 20,
+          "y": 360.1875,
+          "width": 280,
+          "height": 328.921875,
+          "top": 360.1875,
+          "right": 300,
+          "bottom": 689.109375,
+          "left": 20
+        }
+      },
+      {
+        "href": "#research-wam",
+        "rect": {
+          "x": 20,
+          "y": 719.109375,
+          "width": 280,
+          "height": 308.125,
+          "top": 719.109375,
+          "right": 300,
+          "bottom": 1027.234375,
+          "left": 20
+        }
+      },
+      {
+        "href": "#research-mri",
+        "rect": {
+          "x": 20,
+          "y": 1057.234375,
+          "width": 280,
+          "height": 328.921875,
+          "top": 1057.234375,
+          "right": 300,
+          "bottom": 1386.15625,
+          "left": 20
+        }
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "soArm": false,
+    "titles": [
+      "DanceNet3D",
+      "World Action Models",
+      "MRI Reconstruction"
+    ],
+    "cards": [
+      {
+        "href": "#research-3d",
+        "rect": {
+          "x": 22,
+          "y": 305.203125,
+          "width": 346,
+          "height": 280.125,
+          "top": 305.203125,
+          "right": 368,
+          "bottom": 585.328125,
+          "left": 22
+        }
+      },
+      {
+        "href": "#research-wam",
+        "rect": {
+          "x": 22,
+          "y": 615.328125,
+          "width": 346,
+          "height": 308.125,
+          "top": 615.328125,
+          "right": 368,
+          "bottom": 923.453125,
+          "left": 22
+        }
+      },
+      {
+        "href": "#research-mri",
+        "rect": {
+          "x": 22,
+          "y": 953.453125,
+          "width": 346,
+          "height": 280.125,
+          "top": 953.453125,
+          "right": 368,
+          "bottom": 1233.578125,
+          "left": 22
+        }
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "soArm": false,
+    "titles": [
+      "DanceNet3D",
+      "World Action Models",
+      "MRI Reconstruction"
+    ],
+    "cards": [
+      {
+        "href": "#research-3d",
+        "rect": {
+          "x": 36,
+          "y": 327.09375,
+          "width": 696,
+          "height": 252.125,
+          "top": 327.09375,
+          "right": 732,
+          "bottom": 579.21875,
+          "left": 36
+        }
+      },
+      {
+        "href": "#research-wam",
+        "rect": {
+          "x": 36,
+          "y": 609.21875,
+          "width": 696,
+          "height": 252.125,
+          "top": 609.21875,
+          "right": 732,
+          "bottom": 861.34375,
+          "left": 36
+        }
+      },
+      {
+        "href": "#research-mri",
+        "rect": {
+          "x": 36,
+          "y": 891.34375,
+          "width": 696,
+          "height": 252.125,
+          "top": 891.34375,
+          "right": 732,
+          "bottom": 1143.46875,
+          "left": 36
+        }
+      }
+    ]
+  },
+  {
+    "width": 1024,
+    "overflow": false,
+    "soArm": false,
+    "titles": [
+      "DanceNet3D",
+      "World Action Models",
+      "MRI Reconstruction"
+    ],
+    "cards": [
+      {
+        "href": "#research-3d",
+        "rect": {
+          "x": 36,
+          "y": 345.46875,
+          "width": 298.65625,
+          "height": 379.28125,
+          "top": 345.46875,
+          "right": 334.65625,
+          "bottom": 724.75,
+          "left": 36
+        }
+      },
+      {
+        "href": "#research-wam",
+        "rect": {
+          "x": 362.65625,
+          "y": 345.46875,
+          "width": 298.671875,
+          "height": 379.28125,
+          "top": 345.46875,
+          "right": 661.328125,
+          "bottom": 724.75,
+          "left": 362.65625
+        }
+      },
+      {
+        "href": "#research-mri",
+        "rect": {
+          "x": 689.328125,
+          "y": 345.46875,
+          "width": 298.65625,
+          "height": 379.28125,
+          "top": 345.46875,
+          "right": 987.984375,
+          "bottom": 724.75,
+          "left": 689.328125
+        }
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "soArm": false,
+    "titles": [
+      "DanceNet3D",
+      "World Action Models",
+      "MRI Reconstruction"
+    ],
+    "cards": [
+      {
+        "href": "#research-3d",
+        "rect": {
+          "x": 56,
+          "y": 359.984375,
+          "width": 424,
+          "height": 370.15625,
+          "top": 359.984375,
+          "right": 480,
+          "bottom": 730.140625,
+          "left": 56
+        }
+      },
+      {
+        "href": "#research-wam",
+        "rect": {
+          "x": 508,
+          "y": 359.984375,
+          "width": 424,
+          "height": 370.15625,
+          "top": 359.984375,
+          "right": 932,
+          "bottom": 730.140625,
+          "left": 508
+        }
+      },
+      {
+        "href": "#research-mri",
+        "rect": {
+          "x": 960,
+          "y": 359.984375,
+          "width": 424,
+          "height": 370.15625,
+          "top": 359.984375,
+          "right": 1384,
+          "bottom": 730.140625,
+          "left": 960
+        }
+      }
+    ]
+  }
+]

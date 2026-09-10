@@ -1,0 +1,24 @@
+{
+  "cls": 0,
+  "lcp": 932,
+  "longTasks": [
+    68
+  ],
+  "events": [],
+  "heroResources": [
+    {
+      "name": "http://127.0.0.1:3000/assets/hero/dancer-480.webp",
+      "transferSize": 20082,
+      "encodedBodySize": 19782
+    },
+    {
+      "name": "http://127.0.0.1:3000/assets/hero/robot-arm-480.webp",
+      "transferSize": 17500,
+      "encodedBodySize": 17200
+    }
+  ],
+  "activeAnimations": 0,
+  "mediaResources": 0,
+  "idleTaskMs": 2.386,
+  "idleScriptMs": 0
+}

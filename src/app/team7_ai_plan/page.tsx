@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import {
     Bot,
     MessageSquare,
@@ -78,12 +78,8 @@ const Section = ({
     kicker?: string;
     children: React.ReactNode;
 }) => (
-    <motion.section
+    <section
         id={id}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.6, ease: [0.17, 0.55, 0.55, 1] }}
         className="scroll-mt-24"
     >
         <div className="flex items-center gap-3 mb-6">
@@ -100,7 +96,7 @@ const Section = ({
             </div>
         </div>
         {children}
-    </motion.section>
+    </section>
 );
 
 const CodeBlock = ({
@@ -126,13 +122,10 @@ const CodeBlock = ({
 
 export default function Team7AIPlan() {
     return (
-        <main className="min-h-screen pb-32 pt-28 md:pt-32">
+        <main id="main" className="min-h-screen pb-32 pt-28 md:pt-32">
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Hero */}
-                <motion.header
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                <header
                     className="mb-16"
                 >
                     <p className="text-[11px] font-mono uppercase tracking-[0.3em] text-primary/70 mb-3">
@@ -180,7 +173,7 @@ export default function Team7AIPlan() {
                         </Pill>
                         <Pill tone="good">No extra cross-team coordination</Pill>
                     </div>
-                </motion.header>
+                </header>
 
                 {/* TOC */}
                 <nav className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
@@ -341,13 +334,9 @@ const FeatureGoals = () => {
             kicker="Capabilities"
         >
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                {goals.map((g, i) => (
-                    <motion.div
+                {goals.map((g) => (
+                    <div
                         key={g.title}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.05 }}
                         className="p-5 rounded-xl border border-white/10 bg-white/5 hover:border-primary/30 transition-colors"
                     >
                         <div className="flex items-center gap-2 mb-2">
@@ -357,7 +346,7 @@ const FeatureGoals = () => {
                         <p className="text-sm text-foreground/70 leading-relaxed">
                             {g.desc}
                         </p>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
 

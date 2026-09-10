@@ -1,12 +1,14 @@
 {
-  "name": "portfolio-v2",
+  "name": "mingjian-portfolio-green",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node scripts/preview.mjs",
+    "lint": "eslint",
+    "preview": "node scripts/preview.mjs",
+    "assets": "node scripts/prepare-assets.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

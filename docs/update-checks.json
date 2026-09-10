@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Name and sculptures share timeline at 320px",
+    "pass": true
+  },
+  {
+    "name": "Name fades fully into view at 320px",
+    "pass": true
+  },
+  {
+    "name": "No overflow at 320px",
+    "pass": true
+  },
+  {
+    "name": "Simple selected-work preview at 320px",
+    "pass": true
+  },
+  {
+    "name": "SO-ARM opens World Action Model research at 320px",
+    "pass": true
+  },
+  {
+    "name": "No browser errors at 320px",
+    "pass": true
+  },
+  {
+    "name": "Name and sculptures share timeline at 390px",
+    "pass": true
+  },
+  {
+    "name": "Name fades fully into view at 390px",
+    "pass": true
+  },
+  {
+    "name": "No overflow at 390px",
+    "pass": true
+  },
+  {
+    "name": "Simple selected-work preview at 390px",
+    "pass": true
+  },
+  {
+    "name": "SO-ARM opens World Action Model research at 390px",
+    "pass": true
+  },
+  {
+    "name": "No browser errors at 390px",
+    "pass": true
+  },
+  {
+    "name": "Name and sculptures share timeline at 768px",
+    "pass": true
+  },
+  {
+    "name": "Name fades fully into view at 768px",
+    "pass": true
+  },
+  {
+    "name": "No overflow at 768px",
+    "pass": true
+  },
+  {
+    "name": "Simple selected-work preview at 768px",
+    "pass": true
+  },
+  {
+    "name": "SO-ARM opens World Action Model research at 768px",
+    "pass": true
+  },
+  {
+    "name": "No browser errors at 768px",
+    "pass": true
+  },
+  {
+    "name": "Name and sculptures share timeline at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Name fades fully into view at 1440px",
+    "pass": true
+  },
+  {
+    "name": "No overflow at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Simple selected-work preview at 1440px",
+    "pass": true
+  },
+  {
+    "name": "SO-ARM opens World Action Model research at 1440px",
+    "pass": true
+  },
+  {
+    "name": "No browser errors at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion leaves name fully visible",
+    "pass": true
+  },
+  {
+    "name": "No-JS name stays visible",
+    "pass": true
+  },
+  {
+    "name": "Research translation is server-rendered",
+    "pass": true
+  }
+]

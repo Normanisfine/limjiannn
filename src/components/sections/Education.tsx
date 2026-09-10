@@ -1,14 +1,4 @@
-'use client';
-
-import React, { useState } from 'react';
 import Image from 'next/image';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-
-export default function Education() {
-    const [showMore, setShowMore] = useState(false);
-
     const courses = [
         { name: 'Machine Learning', gpa: '4.0' },
         { name: 'Machine Learning Systems', gpa: '3.7' },
@@ -29,110 +19,10 @@ export default function Education() {
         { name: 'Calculus III', gpa: '4.0' },
     ];
 
-    const displayedCourses = showMore ? courses : courses.slice(0, 4);
-
-    return (
-        <SectionWrapper id="education" className="flex flex-col justify-center container mx-auto px-4 py-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-left text-glow pl-4 md:pl-12 md:border-l-4 md:border-l-secondary w-full">
-                EDUCATION
-            </h2>
-
-            <div className="space-y-12 max-w-5xl mx-auto w-full">
-                {/* UPenn */}
-                <div className="flex flex-col md:flex-row gap-8 items-start relative z-10 p-6 md:p-0 rounded-xl transition-colors duration-300">
-                    <div className="w-24 h-24 flex-shrink-0 bg-white rounded-lg p-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        <Image src="/assets/upenn_logo.png" alt="UPenn" width={100} height={100} className="object-contain w-full h-full" />
-                    </div>
-                    <div className="flex-grow">
-                        <div className="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 className="text-3xl font-bold text-primary drop-shadow-md">University of Pennsylvania</h3>
-                            <span className="text-foreground/60 font-mono text-lg">Aug 2026 (Incoming)</span>
-                        </div>
-                        <p className="text-xl font-semibold mb-2">MSE in Computer and Information Science</p>
-                        <p className="text-accent font-semibold text-lg">Graduate School of Engineering and Applied Science</p>
-                    </div>
-                </div>
-
-                {/* NYU */}
-                <div className="flex flex-col md:flex-row gap-8 items-start relative z-10 p-6 md:p-0 rounded-xl transition-colors duration-300">
-                    <div className="w-24 h-24 flex-shrink-0 bg-white rounded-lg p-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        <Image src="/assets/nyu_logo.jpeg" alt="NYU" width={100} height={100} className="object-contain w-full h-full" />
-                    </div>
-                    <div className="flex-grow">
-                        <div className="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 className="text-3xl font-bold text-primary drop-shadow-md">New York University</h3>
-                            <span className="text-foreground/60 font-mono text-lg">2024 - 2026</span>
-                        </div>
-                        <p className="text-xl font-semibold mb-2">B.S. in Computer Science; Minor in Mathematics</p>
-                        <p className="text-secondary font-bold mb-1 text-xl">GPA: 3.972/4.0</p>
-                        <p className="text-accent font-semibold mb-4 text-lg">Dean's List</p>
-                        
-                        {/* Honors and Grants */}
-                        <div className="mb-6 space-y-2">
-                            <div className="flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1">🏆</span>
-                                <div>
-                                    <p className="text-base font-semibold text-foreground/90">NextGenPhD Scholars Program</p>
-                                    <p className="text-sm text-foreground/70">$5,000 research grant for 3D reconstruction and medical imaging (Fall 2025)</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1">🏆</span>
-                                <div>
-                                    <p className="text-base font-semibold text-foreground/90">Undergraduate Summer Research Program (UGSRP)</p>
-                                    <p className="text-sm text-foreground/70">$5,000 grant for research on 3D Gaussian Splatting (Summer 2025)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Courses */}
-                        <div className="mt-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                                <AnimatePresence>
-                                    {displayedCourses.map((course, idx) => (
-                                        <motion.div
-                                            key={course.name}
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            className="flex justify-between items-center border-b border-white/5 py-1"
-                                        >
-                                            <span className="text-sm md:text-base text-gray-300 font-light">{course.name}</span>
-                                            <span className="text-xs font-mono text-primary/70">{course.gpa}</span>
-                                        </motion.div>
-                                    ))}
-                                </AnimatePresence>
-                            </div>
-                            <button
-                                onClick={() => setShowMore(!showMore)}
-                                className="mt-4 text-sm font-medium text-primary/70 transition-colors flex items-center gap-1"
-                            >
-                                {showMore ? 'Show Less' : 'Show More'} <ChevronDown size={14} className={`transform transition-transform ${showMore ? 'rotate-180' : ''}`} />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* SUFE */}
-                <div className="flex flex-col md:flex-row gap-8 items-start relative z-10 p-6 md:p-0 rounded-xl transition-colors duration-300">
-                    <div className="w-24 h-24 flex-shrink-0 bg-white rounded-lg p-2 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-                        <Image src="/assets/sufe_logo.jpeg" alt="SUFE" width={100} height={100} className="object-contain w-full h-full" />
-                    </div>
-                    <div className="flex-grow">
-                        <div className="flex flex-col md:flex-row justify-between mb-2">
-                            <h3 className="text-2xl font-bold text-secondary drop-shadow-md">Shanghai Univ. of Finance & Economics</h3>
-                            <span className="text-foreground/60 font-mono text-lg">2022 - 2023</span>
-                        </div>
-                        <p className="text-xl font-semibold mb-2">B.S. in Accounting; Minor in Statistics</p>
-                        <p className="text-secondary font-bold mb-4 text-xl">GPA: 3.71/4.0</p>
-                        <ul className="list-disc pl-5 text-foreground/80 space-y-1 font-light">
-                            <li>Renmin Scholarship First Prize</li>
-                            <li>Mathematical Contest in Modeling (2nd Prize)</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </SectionWrapper>
-    );
+export default function Education() {
+ return <section id="education" className="section shell"><div className="section-heading"><h2>Education</h2></div><div className="education-list">
+ <article className="education-row"><Image src="/assets/upenn-logo-preview.webp" alt="UPenn" width={64} height={64}/><div><p className="meta">Aug 2026 – Present</p><h3>University of Pennsylvania</h3><p>MSE in Computer and Information Science</p><p>Graduate School of Engineering and Applied Science</p></div></article>
+ <article className="education-row"><Image src="/assets/nyu_logo.jpeg" alt="NYU" width={64} height={64}/><div><p className="meta">2024 - 2026</p><h3>New York University</h3><p>B.S. in Computer Science; Minor in Mathematics</p><p><strong>GPA: 3.972/4.0</strong> · Dean&apos;s List</p><div className="grants"><p><strong>NextGenPhD Scholars Program</strong><br/>$5,000 research grant for 3D reconstruction and medical imaging (Fall 2025)</p><p><strong>Undergraduate Summer Research Program (UGSRP)</strong><br/>$5,000 grant for research on 3D Gaussian Splatting (Summer 2025)</p></div><details className="course-details"><summary>Coursework & grades <span aria-hidden="true">＋</span></summary><dl>{courses.map(course => <div key={course.name}><dt>{course.name}</dt><dd>{course.gpa}</dd></div>)}</dl></details></div></article>
+ <article className="education-row"><Image src="/assets/sufe_logo.jpeg" alt="SUFE" width={64} height={64}/><div><p className="meta">2022 - 2023</p><h3>Shanghai Univ. of Finance & Economics</h3><p>B.S. in Accounting; Minor in Statistics</p><p><strong>GPA: 3.71/4.0</strong></p><ul><li>Renmin Scholarship First Prize</li><li>Mathematical Contest in Modeling (2nd Prize)</li></ul></div></article>
+ </div></section>;
 }

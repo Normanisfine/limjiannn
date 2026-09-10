@@ -1,0 +1,161 @@
+[
+  {
+    "file": "src/app/layout.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/app/page.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/components/ui/SectionWrapper.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/components/3d/FloatingParticles.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/components/3d/ImmersiveScene.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/components/3d/GaussianParticles.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/components/sections/Projects.tsx",
+    "hrefs": [],
+    "anchors": [
+      "projects"
+    ]
+  },
+  {
+    "file": "src/components/sections/Hero.tsx",
+    "hrefs": [],
+    "anchors": [
+      "hero"
+    ]
+  },
+  {
+    "file": "src/components/sections/Internship.tsx",
+    "hrefs": [],
+    "anchors": [
+      "internship"
+    ]
+  },
+  {
+    "file": "src/components/sections/Broadway.tsx",
+    "hrefs": [],
+    "anchors": [
+      "broadway"
+    ]
+  },
+  {
+    "file": "src/components/sections/Contact.tsx",
+    "hrefs": [
+      "mailto:limjiannn@gmail.com",
+      "https://www.linkedin.com/in/limjiannn/",
+      "https://github.com/Normanisfine",
+      "https://scholar.google.com/citations?user=w8Brnx0AAAAJ"
+    ],
+    "anchors": [
+      "contact"
+    ]
+  },
+  {
+    "file": "src/components/sections/Research.tsx",
+    "hrefs": [
+      "https://nyuvideolab.github.io/DanceNet3D/dataset",
+      "https://scholar.google.com/citations?user=w8Brnx0AAAAJ",
+      "https://nyuvideolab.github.io/DanceNet3D/dataset",
+      "https://github.com/Normanisfine/Unity_Stream_GS",
+      "https://github.com/Normanisfine/IVP_MRI_Final",
+      "/assets/mri_report.pdf",
+      "/assets/mri_presentation.pptx"
+    ],
+    "anchors": [
+      "research",
+      "publications",
+      "research-3d",
+      "research-mri"
+    ]
+  },
+  {
+    "file": "src/components/sections/Education.tsx",
+    "hrefs": [],
+    "anchors": [
+      "education"
+    ]
+  },
+  {
+    "file": "src/components/sections/About.tsx",
+    "hrefs": [
+      "https://www.linkedin.com/in/limjiannn/",
+      "https://github.com/Normanisfine",
+      "https://scholar.google.com/citations?user=w8Brnx0AAAAJ",
+      "mailto:limjiannn@gmail.com",
+      "/assets/Resume.pdf"
+    ],
+    "anchors": [
+      "about"
+    ]
+  },
+  {
+    "file": "src/components/layout/Navbar.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/app/nextgenphd/page.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/app/adv/page.tsx",
+    "hrefs": [],
+    "anchors": []
+  },
+  {
+    "file": "src/app/links/page.tsx",
+    "hrefs": [
+      "https://drive.google.com/drive/folders/1t1vY--6y1wj5gmAhxO_ZAOmR5gpRB7YN?usp=sharing"
+    ],
+    "anchors": []
+  },
+  {
+    "file": "src/app/team7_ai_plan/page.tsx",
+    "hrefs": [
+      "https://github.com/HarshithKoriRaj/Shared-API",
+      "https://github.com/HarshithKoriRaj/Shared-API"
+    ],
+    "anchors": [
+      "tldr",
+      "feature",
+      "abc123",
+      "abc123",
+      "\u2026",
+      "abc123",
+      "C0123ENG",
+      "abc123",
+      "17",
+      "C0123SUPPORT",
+      "examples",
+      "tracks",
+      "depends",
+      "dep-arrow",
+      "components",
+      "userflow",
+      "dataflow",
+      "safety",
+      "done",
+      "open"
+    ]
+  }
+]

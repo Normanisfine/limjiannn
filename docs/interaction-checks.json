@@ -1,0 +1,154 @@
+[
+  {
+    "test": "No overflow at 320px",
+    "pass": true
+  },
+  {
+    "test": "No browser errors at 320px",
+    "pass": true
+  },
+  {
+    "test": "No overflow at 390px",
+    "pass": true
+  },
+  {
+    "test": "No browser errors at 390px",
+    "pass": true
+  },
+  {
+    "test": "No overflow at 768px",
+    "pass": true
+  },
+  {
+    "test": "No browser errors at 768px",
+    "pass": true
+  },
+  {
+    "test": "No overflow at 1024px",
+    "pass": true
+  },
+  {
+    "test": "No browser errors at 1024px",
+    "pass": true
+  },
+  {
+    "test": "No overflow at 1440px",
+    "pass": true
+  },
+  {
+    "test": "No browser errors at 1440px",
+    "pass": true
+  },
+  {
+    "test": "Keyboard skip link is first focus target",
+    "pass": true
+  },
+  {
+    "test": "Keyboard opens mobile menu",
+    "pass": true
+  },
+  {
+    "test": "Menu reports expanded state",
+    "pass": true
+  },
+  {
+    "test": "Escape closes menu",
+    "pass": true
+  },
+  {
+    "test": "Escape restores focus",
+    "pass": true
+  },
+  {
+    "test": "Menu anchor reaches education",
+    "pass": true
+  },
+  {
+    "test": "All 17 course grades retained",
+    "pass": true
+  },
+  {
+    "test": "Touch gallery next control scrolls",
+    "pass": true
+  },
+  {
+    "test": "Gallery opens lightbox",
+    "pass": true
+  },
+  {
+    "test": "Lightbox Escape restores photo focus",
+    "pass": true
+  },
+  {
+    "test": "No videos mounted before activation",
+    "pass": true
+  },
+  {
+    "test": "Only requested video mounts",
+    "pass": true
+  },
+  {
+    "test": "Offscreen video pauses",
+    "pass": true
+  },
+  {
+    "test": "Reduced motion has no entrance animation",
+    "pass": true
+  },
+  {
+    "test": "Reduced motion disables smooth scroll",
+    "pass": true
+  },
+  {
+    "test": "All home anchors resolve",
+    "pass": true
+  },
+  {
+    "test": "All 20 Broadway photos retained",
+    "pass": true
+  },
+  {
+    "test": "All 7 projects retained",
+    "pass": true
+  },
+  {
+    "test": "All 4 internships retained",
+    "pass": true
+  },
+  {
+    "test": "Every original section URL retained",
+    "pass": true
+  },
+  {
+    "test": "Preserved route /adv responds",
+    "pass": true
+  },
+  {
+    "test": "Preserved route /links responds",
+    "pass": true
+  },
+  {
+    "test": "Preserved route /nextgenphd responds",
+    "pass": true
+  },
+  {
+    "test": "Preserved route /team7_ai_plan responds",
+    "pass": true
+  },
+  {
+    "test": "No-JS name and content visible",
+    "pass": true
+  },
+  {
+    "test": "No-JS navigation expands",
+    "pass": true
+  },
+  {
+    "test": "No-JS coursework expands",
+    "pass": true
+  },
+  {
+    "test": "No-JS media fallback links available",
+    "pass": true
+  }
+]

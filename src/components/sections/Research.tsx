@@ -1,364 +1,121 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
-import SectionWrapper from '@/components/ui/SectionWrapper';
-import { ExternalLink, Github, ArrowRight, Award } from 'lucide-react';
+import MediaPlayer from '@/components/ui/MediaPlayer';
+import DanceVideo from '@/components/ui/DanceVideo';
+
+const danceVideos = ['AttitudePromenade', 'BartSimpson', 'BiancaGolden_Chimee', 'Chacha', 'HouseFootworkAdvanced', 'RobertRubama_RussiaCostume'];
+const unityFeatures = [
+ 'Real-time sequence playback with transport controls',
+ 'Play, Pause, Loop modes with adjustable speed (0.1x - 5x)',
+ 'Batch conversion of PLY files to optimized assets',
+ 'VR/AR support for Quest 3, Vive, Varjo and more',
+ 'Interactive timeline and frame-by-frame scrubbing',
+];
+const unrealFeatures = [
+ 'Memory-efficient streaming with bounded VRAM (60MB for unlimited lengths)',
+ 'Built-in playback UI with keyboard controls (P, comma, period)',
+ 'Full transport controls: Play, Pause, Stop, frame scrubbing',
+ 'Multi-sequence playlist with runtime switching',
+ 'Native VR support with immersive display capabilities',
+];
 
 export default function Research() {
-    const danceVideos = [
-        { name: 'AttitudePromenade', src: '/assets/dance_videos/AttitudePromenade.webm' },
-        { name: 'BartSimpson', src: '/assets/dance_videos/BartSimpson.webm' },
-        { name: 'BiancaGolden_Chimee', src: '/assets/dance_videos/BiancaGolden_Chimee.webm' },
-        { name: 'Chacha', src: '/assets/dance_videos/Chacha.webm' },
-        { name: 'HouseFootworkAdvanced', src: '/assets/dance_videos/HouseFootworkAdvanced.webm' },
-        { name: 'RobertRubama_RussiaCostume', src: '/assets/dance_videos/RobertRubama_RussiaCostume.webm' },
-    ];
+ return (
+  <section id="research" className="section shell research-section">
+   <h2>Research</h2>
+<article id="research-wam" className="wam-research" aria-labelledby="wam-title">
+                    <p className="meta">September 2026 – Present</p>
+                    <h3 id="wam-title">Integrating World Action Models with 3D Geometry</h3>
+                    <p className="wam-advisors">Advisors: Prof. Lingjie Liu and Chen Wang (PhD student)</p>
+                    <ul className="wam-contributions">
+                        <li>
+                            <strong>3D feature fusion.</strong> Researching geometry-conditioned models of the current scene for robotic manipulation policies, built on FastWAM and VGGT-Ω. Integrating point clouds or scene features extracted from dual-view RGB images into action prediction, with an end-to-end workflow for feature caching, adapter training, and closed-loop simulation.
+                        </li>
+                        <li>
+                            <strong>Parameter-efficient training.</strong> Implemented point-cloud and scene-feature adapters that map geometry into 32 conditioning tokens. With the geometry encoder and policy backbone frozen, trained adapters with 2.38 million and 4.30 million parameters using flow matching loss, and completed a comparative study of the two geometric representations.
+                        </li>
+                        <li>
+                            <strong>Ablation evaluation.</strong> Completed 350 closed-loop evaluations across seven configurations and 10 LIBERO tasks, comparing real, shuffled, and zeroed geometry inputs, as well as an adapter-disabled baseline. Used paired action losses and stage-by-stage timing to evaluate the contribution of geometry and its online computational overhead.
+                        </li>
+                    </ul>
+                </article>
+   <section id="publications" className="research-publication" aria-labelledby="publication-heading">
+    <h3 id="publication-heading">Publications</h3>
+    <p className="publication-title">&quot;DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions.&quot;</p>
+    <p>Shihang Wei*, <strong>Mingjian Li*</strong>, Ran Gong, Yueyu Hu, Yao Wang.</p>
+    <p className="research-note">CVPR 2026 3DMV Workshop · Best Paper Award<br/>* Equal contribution</p>
+    <div className="research-links">
+     <a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer">Project Page ↗</a>
+     <a href="https://scholar.google.com/citations?user=w8Brnx0AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+    </div>
+   </section>
 
-    return (
-        <SectionWrapper id="research" className="flex flex-col justify-center container mx-auto px-4 py-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center text-glow">
-                RESEARCH
-            </h2>
+   <article id="research-3d" className="research-article">
+    <h3>NYU Video Lab: 3D Dancing Human Reconstruction Dataset</h3>
+    <p className="research-note">Computer Vision · 3DGS · PyTorch · Camera Calibration · Unity AR/VR · Unreal Engine</p>
+    <div className="research-prose">
+     <p>A benchmark dataset with multiview, multiframe human dancer sequences, including building a full pipeline for raw data processing, 3D Gaussian construction with PSNR ≈ 34.</p>
+     <p>Unity player integrated with AR/VR capabilities for real-time 3D Gaussian Splatting visualization, enabling interactive playback on mobile devices with seamless cross-platform deployment.</p>
+     <p>Unreal Engine plugin with native VR support for immersive 3D reconstruction visualization, featuring high-performance rendering and interactive VR display capabilities for enhanced spatial understanding.</p>
+    </div>
+    <div className="research-links"><a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer">View DanceNet3D Dataset ↗</a></div>
 
-            <div className="max-w-7xl mx-auto">
+    <div id="dance-examples" className="research-examples">
+     <h4>3D Reconstruction Examples</h4>
+     <div className="dance-gallery" tabIndex={0} role="region" aria-label="Dance reconstruction videos">
+      {danceVideos.map(name => <figure key={name}>
+       <DanceVideo src={`/assets/dance_videos/${name}.webm`} poster={`/assets/dance_videos/${name}_poster.jpg`} label={name.replace(/_/g, ' ')}/>
+       <figcaption>{name.replace(/_/g, ' ')}</figcaption>
+      </figure>)}
+     </div>
+     <p className="research-note gallery-hint">Scroll to explore all six sequences. Use the video controls to pause.</p>
+    </div>
 
-                {/* Publications */}
-                <div id="publications" className="mb-16 pb-16 border-b border-white/10">
-                    <h3 className="text-2xl font-bold text-secondary mb-6 uppercase tracking-wider">Publications</h3>
-                    <div className="space-y-4">
-                        <div className="flex gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:border-primary/30 transition-colors">
-                            <span className="text-primary font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
-                            <div>
-                                <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-yellow-400/15 text-yellow-300 text-xs font-bold uppercase tracking-wider border border-yellow-400/40 rounded-full">
-                                    <Award size={12} /> Best Paper Award
-                                </div>
-                                <p className="text-base text-foreground/90 leading-relaxed">
-                                    Shihang Wei*, <span className="font-semibold text-foreground">Mingjian Li</span>*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
-                                    <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
-                                    <span className="text-primary font-semibold">CVPR 2026 3DMV Workshop.</span>
-                                </p>
-                                <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
-                                <div className="flex flex-wrap items-center gap-4 mt-2">
-                                    <a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 text-yellow-400 hover:text-yellow-300 transition-colors text-sm font-medium">
-                                        <ExternalLink size={14} /> Project Page
-                                    </a>
-                                    <a href="https://scholar.google.com/citations?user=w8Brnx0AAAAJ" target="_blank" rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
-                                        <ExternalLink size={14} /> Google Scholar
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section className="research-demo" aria-labelledby="unity-heading">
+     <div className="research-demo-media"><MediaPlayer src="/assets/unity_ar_display.mp4" poster="/assets/unity_ar_display-poster.webp" label="Unity AR/VR Display"/></div>
+     <div>
+      <h4 id="unity-heading">Unity AR/VR Display</h4>
+      <p>A Unity plugin for streaming and playing back animated 3D Gaussian Splatting sequences in real time, with AR and VR support.</p>
+      <ul className="research-feature-list">{unityFeatures.map(feature => <li key={feature}>{feature}</li>)}</ul>
+      <div className="research-links"><a href="https://github.com/Normanisfine/Unity_Stream_GS" target="_blank" rel="noopener noreferrer">View GitHub Repository ↗</a></div>
+     </div>
+    </section>
 
-                {/* Main Project */}
-                <div id="research-3d" className="w-full space-y-8">
-                    <h3 className="text-3xl font-bold text-primary mb-4 drop-shadow-lg">
-                        NYU Video Lab: 3D Dancing Human Reconstruction Dataset
-                    </h3>
+    <section className="research-demo" aria-labelledby="unreal-heading">
+     <div className="research-demo-media"><MediaPlayer src="/assets/unreal_display.mp4" poster="/assets/unreal_display-poster.webp" label="Unreal Engine Display"/></div>
+     <div>
+      <h4 id="unreal-heading">Unreal Engine Display</h4>
+      <p>A production-ready Unreal Engine plugin for streaming and rendering animated 3D Gaussian Splatting sequences with native VR integration.</p>
+      <ul className="research-feature-list">{unrealFeatures.map(feature => <li key={feature}>{feature}</li>)}</ul>
+     </div>
+    </section>
+   </article>
 
-                    <div className="flex flex-wrap gap-3 mb-6">
-                        {['Computer Vision', '3DGS', 'PyTorch', 'Camera Calibration', 'Unity AR/VR', 'Unreal Engine'].map(tag => (
-                            <span key={tag} className="px-3 py-1 bg-primary/10 text-primary text-xs uppercase tracking-wider border border-primary/20">
-                                {tag}
-                            </span>
-                        ))}
-                        <span className="px-3 py-1 bg-yellow-400/10 text-yellow-400 text-xs uppercase tracking-wider border border-yellow-400/30 font-semibold">
-                            Publication
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-400/15 text-yellow-300 text-xs uppercase tracking-wider border border-yellow-400/40 font-semibold rounded-sm">
-                            <Award size={12} /> Best Paper Award
-                        </span>
-                    </div>
-
-                    <p className="text-lg text-foreground/80 font-light leading-relaxed mb-4">
-                        A benchmark dataset with multiview, multiframe human dancer sequences, including building a full pipeline for raw data processing, 3D Gaussian construction with PSNR ≈ 34.
-                    </p>
-
-                    <p className="text-lg text-foreground/80 font-light leading-relaxed mb-4">
-                        Unity player integrated with AR/VR capabilities for real-time 3D Gaussian Splatting visualization, enabling interactive playback on mobile devices with seamless cross-platform deployment.
-                    </p>
-
-                    <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6">
-                        Unreal Engine plugin with native VR support for immersive 3D reconstruction visualization, featuring high-performance rendering and interactive VR display capabilities for enhanced spatial understanding.
-                    </p>
-
-                    <a href="https://nyuvideolab.github.io/DanceNet3D/dataset" target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors font-medium border-b border-yellow-400/30 hover:border-yellow-300/50 pb-1 mb-6">
-                        <ExternalLink size={18} /> View DanceNet3D Dataset
-                    </a>
-
-                    {/* Publication citation */}
-                    <div className="flex gap-4 p-5 bg-yellow-400/5 rounded-xl border border-yellow-400/20 mb-8">
-                        <span className="text-yellow-400 font-mono font-bold text-sm mt-0.5 flex-shrink-0">[1]</span>
-                        <div>
-                            <div className="mb-2 inline-flex items-center gap-1.5 px-2.5 py-1 bg-yellow-400/15 text-yellow-300 text-xs font-bold uppercase tracking-wider border border-yellow-400/40 rounded-full">
-                                <Award size={12} /> Best Paper Award
-                            </div>
-                            <p className="text-sm text-foreground/90 leading-relaxed">
-                                Shihang Wei*, <span className="font-semibold text-foreground">Mingjian Li</span>*, Ran Gong, Yueyu Hu, Yao Wang.{' '}
-                                <span className="italic">"DanceNet3D: A 3D Dance Dataset with Multi-View Videos and 3DGS Reconstructions."</span>{' '}
-                                <span className="text-yellow-400 font-semibold">CVPR 2026 3DMV Workshop.</span>
-                            </p>
-                            <p className="text-xs text-foreground/50 mt-1">* Equal contribution</p>
-                        </div>
-                    </div>
-
-                    {/* Dancing Human Videos - Horizontal Scroll */}
-                    <div className="mb-8">
-                        <h4 className="text-xl font-semibold mb-4 text-secondary">3D Reconstruction Examples</h4>
-                        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/30 scrollbar-track-transparent">
-                            {danceVideos.map((video) => (
-                                <div key={video.name} className="flex-shrink-0 w-64 md:w-80">
-                                    <div className="relative w-full" style={{ aspectRatio: '5/8' }}>
-                                        <video
-                                            src={video.src}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            preload="auto"
-                                            className="absolute inset-0 w-full h-full object-contain rounded-lg border border-white/10 shadow-lg bg-background"
-                                        />
-                                    </div>
-                                    <p className="text-sm text-foreground/60 mt-2 text-center">{video.name.replace(/_/g, ' ')}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Unity AR/VR Display */}
-                    <div className="mb-12">
-                        <h4 className="text-2xl font-bold mb-6 text-secondary">Unity AR/VR Display</h4>
-                        <div className="flex flex-col md:flex-row gap-8 items-center bg-gradient-to-r from-primary/5 to-transparent p-6 rounded-2xl border border-white/5">
-                            <div className="w-full md:w-2/5 max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                                <video
-                                    src="/assets/unity_ar_display.mp4"
-                                    controls
-                                    className="w-full h-auto"
-                                />
-                            </div>
-                            <div className="w-full md:w-3/5 space-y-4 flex flex-col justify-center h-full">
-                                <div className="space-y-4">
-                                    <p className="text-lg text-foreground/90 leading-relaxed font-light">
-                                        A Unity plugin for streaming and playing back animated 3D Gaussian Splatting sequences in real time, with AR and VR support.
-                                    </p>
-                                    <div className="space-y-3 bg-black/20 p-5 rounded-lg border border-white/5">
-                                        <h5 className="text-lg font-bold text-primary flex items-center gap-2 mb-3">
-                                            <span className="w-1 h-5 bg-primary rounded"></span>
-                                            Key Features
-                                        </h5>
-                                        <ul className="text-base text-foreground/80 space-y-2.5 pl-1">
-                                            <li className="flex items-start gap-3">
-                                                <span className="text-primary mt-1 text-lg">▹</span>
-                                                <span className="leading-relaxed">Real-time sequence playback with transport controls</span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <span className="text-primary mt-1 text-lg">▹</span>
-                                                <span className="leading-relaxed">Play, Pause, Loop modes with adjustable speed (0.1x - 5x)</span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <span className="text-primary mt-1 text-lg">▹</span>
-                                                <span className="leading-relaxed">Batch conversion of PLY files to optimized assets</span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <span className="text-primary mt-1 text-lg">▹</span>
-                                                <span className="leading-relaxed">VR/AR support for Quest 3, Vive, Varjo and more</span>
-                                            </li>
-                                            <li className="flex items-start gap-3">
-                                                <span className="text-primary mt-1 text-lg">▹</span>
-                                                <span className="leading-relaxed">Interactive timeline and frame-by-frame scrubbing</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="pt-2">
-                                    <a href="https://github.com/Normanisfine/Unity_Stream_GS" target="_blank" rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-all duration-300 font-semibold text-base group">
-                                        <Github size={20} className="group-hover:scale-110 transition-transform" /> 
-                                        <span className="border-b border-blue-400/30 group-hover:border-blue-300">View GitHub Repository</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Unreal Display */}
-                    <div className="mb-12">
-                        <h4 className="text-2xl font-bold mb-6 text-secondary">Unreal Engine Display</h4>
-                        <div className="flex flex-col md:flex-row gap-8 items-center bg-gradient-to-r from-accent/5 to-transparent p-6 rounded-2xl border border-white/5">
-                            <div className="w-full md:w-2/5 max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-                                <video
-                                    src="/assets/unreal_display.mp4"
-                                    controls
-                                    className="w-full h-auto"
-                                />
-                            </div>
-                            <div className="w-full md:w-3/5 space-y-4 flex flex-col justify-center">
-                                <p className="text-lg text-foreground/90 leading-relaxed font-light">
-                                    A production-ready Unreal Engine plugin for streaming and rendering animated 3D Gaussian Splatting sequences with native VR integration.
-                                </p>
-                                <div className="space-y-3 bg-black/20 p-4 rounded-lg border border-white/5">
-                                    <h5 className="text-lg font-bold text-accent flex items-center gap-2">
-                                        <span className="w-1 h-5 bg-accent rounded"></span>
-                                        Key Features
-                                    </h5>
-                                    <ul className="text-base text-foreground/80 space-y-2 pl-1">
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Memory-efficient streaming with bounded VRAM (60MB for unlimited lengths)</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Built-in playback UI with keyboard controls (P, comma, period)</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Full transport controls: Play, Pause, Stop, frame scrubbing</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Multi-sequence playlist with runtime switching</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Native VR support with immersive display capabilities</span>
-                                        </li>
-                                        {/* <li className="flex items-start gap-2">
-                                            <span className="text-accent mt-1">▹</span>
-                                            <span>Click-to-select actor control for multi-actor scenes</span>
-                                        </li> */}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* MRI Research Section */}
-                    <div id="research-mri" className="mt-16 pt-16 border-t border-white/10">
-                        <h3 className="text-3xl font-bold text-primary mb-6 drop-shadow-lg">
-                            Deep Learning Based Accelerated MR Image Reconstruction
-                        </h3>
-
-                        {/* Links Section - Right under heading */}
-                        <div className="flex flex-wrap gap-4 mb-8">
-                            <a href="https://github.com/Normanisfine/IVP_MRI_Final" target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300 font-semibold text-sm rounded-lg border border-blue-500/30 group">
-                                <Github size={18} className="group-hover:scale-110 transition-transform" /> 
-                                <span>GitHub Repository</span>
-                            </a>
-                            <a href="/assets/mri_report.pdf" target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 text-green-400 hover:bg-green-500/20 hover:text-green-300 transition-all duration-300 font-semibold text-sm rounded-lg border border-green-500/30 group">
-                                <ExternalLink size={18} className="group-hover:scale-110 transition-transform" /> 
-                                <span>Research Report</span>
-                            </a>
-                            <a href="/assets/mri_presentation.pptx" target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 hover:text-purple-300 transition-all duration-300 font-semibold text-sm rounded-lg border border-purple-500/30 group">
-                                <ExternalLink size={18} className="group-hover:scale-110 transition-transform" /> 
-                                <span>Presentation</span>
-                            </a>
-                        </div>
-
-                        <div className="space-y-8">
-                            <div className="flex flex-wrap gap-3">
-                                {['Deep Learning', 'MRI', 'PyTorch', 'CUDA', 'FastMRI', 'Diffusion Models'].map(tag => (
-                                    <span key={tag} className="px-3 py-1 bg-secondary/10 text-secondary text-xs uppercase tracking-wider border border-secondary/20">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <p className="text-lg text-foreground/80 font-light leading-relaxed">
-                                Research on deep learning–based magnetic resonance (MR) image reconstruction, aiming to accelerate scan times by reconstructing high-quality images from undersampled k-space data.
-                            </p>
-
-                            <p className="text-lg text-foreground/80 font-light leading-relaxed">
-                                Comprehensive evaluation study of supervised, self-supervised, and zero-shot learning approaches using CNN, UNet, and diffusion-based models (Variational Networks, Score-based Diffusion Models) on the FastMRI dataset.
-                            </p>
-
-                            {/* Technical Achievements - Before images */}
-                            <div className="bg-black/20 p-6 rounded-lg border border-white/5">
-                                <h5 className="text-lg font-bold text-secondary flex items-center gap-2 mb-4">
-                                    <span className="w-1 h-5 bg-secondary rounded"></span>
-                                    Technical Achievements & Results
-                                </h5>
-                                <ul className="text-base text-foreground/80 space-y-2.5 pl-1">
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-secondary mt-1 text-lg">▹</span>
-                                        <span className="leading-relaxed"><strong className="text-foreground/90">VarNet Implementation:</strong> Achieved PSNR of 34.62 ± 3.78 dB with 4× acceleration and 0.24s inference time per slice</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-secondary mt-1 text-lg">▹</span>
-                                        <span className="leading-relaxed"><strong className="text-foreground/90">Score-Based Diffusion:</strong> Implemented SENSE parallel imaging achieving 12.5× speedup (from 30,000 to 2,000 evaluations)</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-secondary mt-1 text-lg">▹</span>
-                                        <span className="leading-relaxed"><strong className="text-foreground/90">Multi-GPU HPC:</strong> Refined PyTorch/CUDA implementations with distributed training achieving 4× speedup in performance</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-secondary mt-1 text-lg">▹</span>
-                                        <span className="leading-relaxed"><strong className="text-foreground/90">Systematic Evaluation:</strong> Tested 7 checkpoints to identify optimal model (epoch 50) with best generalization performance</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            {/* MRI Image Reconstruction Flow */}
-                            <div className="bg-gradient-to-r from-secondary/5 to-transparent p-8 rounded-2xl border border-white/5">
-                                <h4 className="text-xl font-semibold mb-6 text-secondary text-center">Image Reconstruction Pipeline</h4>
-                                <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                                    {/* Undersampled Image */}
-                                    <div className="flex flex-col items-center space-y-3">
-                                        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-red-500/50 shadow-xl">
-                                            <Image
-                                                src="/assets/mri_undersampled.jpeg"
-                                                alt="Undersampled MRI"
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div className="text-center">
-                                            <p className="font-semibold text-lg text-red-400">Undersampled</p>
-                                            <p className="text-sm text-foreground/60">Low-quality input</p>
-                                        </div>
-                                    </div>
-
-                                    {/* Arrow with DL Model label */}
-                                    <div className="flex flex-col items-center">
-                                        <ArrowRight className="text-primary hidden md:block" size={48} strokeWidth={2.5} />
-                                        <div className="text-center mt-2 mb-2">
-                                            <p className="font-bold text-primary text-sm bg-primary/10 px-4 py-2 rounded-full border border-primary/30">
-                                                Deep Learning Model
-                                            </p>
-                                            <p className="text-xs text-foreground/50 mt-1">UNet / Diffusion</p>
-                                        </div>
-                                        <ArrowRight className="text-primary hidden md:block" size={48} strokeWidth={2.5} />
-                                    </div>
-
-                                    {/* Recovered Image */}
-                                    <div className="flex flex-col items-center space-y-3">
-                                        <div className="relative w-64 h-64 rounded-lg overflow-hidden border-2 border-green-500/50 shadow-xl">
-                                            <Image
-                                                src="/assets/mri_recovered.jpeg"
-                                                alt="Recovered MRI"
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                        <div className="text-center">
-                                            <p className="font-semibold text-lg text-green-400">Recovered</p>
-                                            <p className="text-sm text-foreground/60">High-quality output</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </SectionWrapper>
-    );
+   <article id="research-mri" className="research-article">
+    <h3>Deep Learning Based Accelerated MR Image Reconstruction</h3>
+    <p className="research-note">Deep Learning · MRI · PyTorch · CUDA · FastMRI · Diffusion Models</p>
+    <div className="research-links">
+     <a href="https://github.com/Normanisfine/IVP_MRI_Final" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+     <a href="/assets/mri_report.pdf" target="_blank" rel="noopener noreferrer">Research Report ↗</a>
+     <a href="/assets/mri_presentation.pptx" target="_blank" rel="noopener noreferrer">Presentation ↗</a>
+    </div>
+    <div className="research-prose">
+     <p>Research on deep learning–based magnetic resonance (MR) image reconstruction, aiming to accelerate scan times by reconstructing high-quality images from undersampled k-space data.</p>
+     <p>Comprehensive evaluation study of supervised, self-supervised, and zero-shot learning approaches using CNN, UNet, and diffusion-based models (Variational Networks, Score-based Diffusion Models) on the FastMRI dataset.</p>
+    </div>
+    <h4>Technical Achievements & Results</h4>
+    <ul className="research-feature-list">
+     <li><strong>VarNet Implementation:</strong> Achieved PSNR of 34.62 ± 3.78 dB with 4× acceleration and 0.24s inference time per slice</li>
+     <li><strong>Score-Based Diffusion:</strong> Implemented SENSE parallel imaging achieving 12.5× speedup (from 30,000 to 2,000 evaluations)</li>
+     <li><strong>Multi-GPU HPC:</strong> Refined PyTorch/CUDA implementations with distributed training achieving 4× speedup in performance</li>
+     <li><strong>Systematic Evaluation:</strong> Tested 7 checkpoints to identify optimal model (epoch 50) with best generalization performance</li>
+    </ul>
+    <h4>Image Reconstruction Pipeline</h4>
+    <div className="mri-comparison">
+     <figure><Image src="/assets/mri_undersampled.jpeg" alt="Undersampled MRI" width={400} height={400}/><figcaption><strong>Undersampled</strong><span>Low-quality input</span></figcaption></figure>
+     <p className="mri-model-label">Deep Learning Model<span>UNet / Diffusion</span><span aria-hidden="true">→</span></p>
+     <figure><Image src="/assets/mri_recovered.jpeg" alt="Recovered MRI" width={400} height={400}/><figcaption><strong>Recovered</strong><span>High-quality output</span></figcaption></figure>
+    </div>
+   </article>
+  </section>
+ );
 }

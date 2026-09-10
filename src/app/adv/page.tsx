@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function AdvPage() {
     return (
-        <main className="min-h-screen pb-16 pt-24 md:pt-28">
+        <main id="main" className="min-h-screen pb-16 pt-24 md:pt-28">
             <div className="container mx-auto max-w-6xl px-4 md:px-8">
                 <header className="mb-8">
                     <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.3em] text-primary/70">

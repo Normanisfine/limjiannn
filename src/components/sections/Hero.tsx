@@ -1,112 +1,103 @@
 'use client';
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowDown, Box, Brain, Theater } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
+ const stage = useRef<HTMLDivElement>(null);
+ const animations = useRef<Animation[]>([]);
+ const playEntrance = () => {
+  animations.current.forEach(animation => animation.cancel());
+  if (!stage.current || document.hidden || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const mobile = window.matchMedia('(max-width: 1023px)').matches;
+  const timing = { duration: mobile ? 1800 : 2600, easing: 'cubic-bezier(.22,1,.36,1)' };
+  animations.current = Array.from(stage.current.querySelectorAll<HTMLElement>('.sculpture-motion')).map((element, index) => element.animate([
+   { transform: `translateX(${(index ? 1 : -1) * (mobile ? 24 : 64)}px) rotate(${index ? 2 : -2}deg)` },
+   { transform: 'translateX(0) rotate(0deg)' }
+  ], timing));
+  // Both sculptures start together; the name uses a staged CSS fade from first paint.
+  const startTime = document.timeline.currentTime;
+  animations.current.forEach(animation => { animation.startTime = startTime; });
+ };
+ useEffect(() => {
+  let disposed = false;
+  const images = Array.from(stage.current?.querySelectorAll('img') ?? []);
+  Promise.all(images.map(img => img.decode())).then(() => { if (!disposed) playEntrance(); }).catch(() => {});
+  const finish = () => animations.current.forEach(animation => animation.cancel());
+  const visibility = () => { if (document.hidden) finish(); };
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  motion.addEventListener('change', finish);
+  document.addEventListener('visibilitychange', visibility);
+  return () => { disposed = true; finish(); motion.removeEventListener('change', finish); document.removeEventListener('visibilitychange', visibility); };
+ }, []);
+ useEffect(() => {
+  const element = stage.current;
+  if (!element) return;
+  const scene = element.closest<HTMLElement>('.intro-scene');
+  const work = scene?.querySelector<HTMLElement>('#work');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = 0;
+  let origin = 0;
+  let range = 1;
+  let travel = 0;
+  let revealStart = 0;
+  let revealRange = 1;
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.4,
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, scale: 0.9, y: 50, filter: 'blur(10px)' },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            transition: { duration: 2.0, ease: [0.16, 1, 0.3, 1] as const }
-        }
-    };
-
-    return (
-        <section id="hero" className="h-screen w-full flex flex-col items-center justify-center text-center px-4 relative">
-            <div className="absolute inset-0 bg-transparent z-0"></div>
-
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                className="z-10 relative pointer-events-auto"
-            >
-                <motion.h2
-                    variants={itemVariants}
-                    className="text-secondary font-medium tracking-widest mb-4 uppercase text-sm md:text-base drop-shadow-lg"
-                >
-                    Software Engineer & Researcher
-                </motion.h2>
-
-                <motion.h1
-                    variants={itemVariants}
-                    className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-6 text-glow mix-blend-screen"
-                >
-                    MINGJIAN LI
-                </motion.h1>
-
-                <motion.p
-                    variants={itemVariants}
-                    className="text-foreground/90 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed mb-10 drop-shadow-md font-light"
-                >
-                    Crafting digital experiences with code and creativity. <br className="hidden md:block" />
-                    Specializing in 3D Reconstruction, Machine Learning, and Full-Stack Development.
-                </motion.p>
-
-                <motion.div
-                    variants={itemVariants}
-                    className="flex flex-col items-center gap-6"
-                >
-                    <h3 className="text-sm font-semibold text-foreground/60 uppercase tracking-widest">
-                        Highlights
-                    </h3>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
-                        <button
-                            onClick={() => scrollToSection('publications')}
-                            className="group px-8 py-4 bg-gradient-to-r from-primary/20 to-secondary/20 hover:from-primary/30 hover:to-secondary/30 text-foreground border border-primary/50 rounded-xl font-semibold transition-all hover:scale-105 backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.3)] flex items-center gap-3"
-                        >
-                            <Box size={20} className="text-primary group-hover:rotate-12 transition-transform" />
-                            <span>3D Reconstruction</span>
-                        </button>
-                        
-                        <button
-                            onClick={() => scrollToSection('research-mri')}
-                            className="group px-8 py-4 bg-gradient-to-r from-accent/20 to-purple-500/20 hover:from-accent/30 hover:to-purple-500/30 text-foreground border border-accent/50 rounded-xl font-semibold transition-all hover:scale-105 backdrop-blur-sm shadow-[0_0_20px_rgba(251,146,60,0.3)] flex items-center gap-3"
-                        >
-                            <Brain size={20} className="text-accent group-hover:scale-110 transition-transform" />
-                            <span>MRI with Deep Learning</span>
-                        </button>
-
-                        <button
-                            onClick={() => scrollToSection('broadway')}
-                            className="group px-8 py-4 bg-gradient-to-r from-pink-500/20 to-red-500/20 hover:from-pink-500/30 hover:to-red-500/30 text-foreground border border-pink-500/50 rounded-xl font-semibold transition-all hover:scale-105 backdrop-blur-sm shadow-[0_0_20px_rgba(236,72,153,0.3)] flex items-center gap-3"
-                        >
-                            <Theater size={20} className="text-pink-400 group-hover:rotate-12 transition-transform" />
-                            <span>Broadway</span>
-                        </button>
-                    </div>
-                </motion.div>
-            </motion.div>
-
-            <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-primary/50 pointer-events-auto"
-            >
-                <ArrowDown size={32} />
-            </motion.div>
-        </section>
-    );
+  const update = () => {
+   frame = 0;
+   const progress = reducedMotion.matches ? 0 : Math.min(1, Math.max(0, (window.scrollY - origin) / range));
+   const reveal = reducedMotion.matches ? 1 : Math.min(1, Math.max(0, (window.scrollY - revealStart) / revealRange));
+   element.style.setProperty('--scroll-separation', `${progress * travel + (reducedMotion.matches ? 0 : reveal * element.clientWidth * 0.28)}px`);
+   scene?.style.setProperty('--work-reveal', `${reveal}`);
+   scene?.style.setProperty('--scene-detail-opacity', `${1 - Math.min(1, reveal * 3)}`);
+   scene?.style.setProperty('--scene-opacity', `${1 - Math.max(0, (reveal - 0.65) / 0.35)}`);
+  };
+  const schedule = () => {
+   if (!frame) frame = window.requestAnimationFrame(update);
+  };
+  const measure = () => {
+   const hero = element.closest('section');
+   origin = (scene?.getBoundingClientRect().top ?? 0) + window.scrollY;
+   range = Math.max(1, (hero?.offsetHeight ?? window.innerHeight) * 0.65);
+   travel = Math.min(130, element.clientWidth * 0.13);
+   if (scene && hero && work) {
+    scene.dataset.motion = 'ready';
+    const stageOffset = element.offsetTop;
+    scene.style.setProperty('--hero-pin-top', `${Math.min(240, stageOffset) - stageOffset}px`);
+    // Read the untransformed section so reveal progress cannot feed back into layout.
+    const workTop = origin + work.offsetTop;
+    revealStart = workTop - window.innerHeight * 0.85;
+    revealRange = Math.max(1, window.innerHeight * 0.85 - 170);
+   }
+   schedule();
+  };
+  const onMotionChange = () => {
+   window.removeEventListener('scroll', schedule);
+   if (!reducedMotion.matches) window.addEventListener('scroll', schedule, { passive: true });
+   schedule();
+  };
+  const resize = new ResizeObserver(measure);
+  resize.observe(element);
+  if (element.parentElement) resize.observe(element.parentElement);
+  measure();
+  window.addEventListener('resize', measure, { passive: true });
+  onMotionChange();
+  reducedMotion.addEventListener('change', onMotionChange);
+  return () => {
+   resize.disconnect();
+   window.removeEventListener('resize', measure);
+   window.removeEventListener('scroll', schedule);
+   reducedMotion.removeEventListener('change', onMotionChange);
+   if (frame) window.cancelAnimationFrame(frame);
+   element.style.removeProperty('--scroll-separation');
+   if (scene) { delete scene.dataset.motion; ['--work-reveal', '--scene-detail-opacity', '--scene-opacity', '--hero-pin-top'].forEach(key => scene.style.removeProperty(key)); }
+  };
+ }, []);
+ return <section id="hero" className="hero shell">
+  <h1 aria-label="Mingjian Li"><span aria-hidden="true"><span className="name-initial">M</span><span className="name-rest">ingjian</span></span> <span aria-hidden="true"><span className="name-initial">L</span><span className="name-rest">i<span className="name-period">.</span></span></span></h1>
+  <div className="sculpture-stage" ref={stage}>
+   <div className="butter-disc" aria-hidden="true"/>
+   <div className="sculpture-position dancer-position" aria-hidden="true"><div className="sculpture-scroll"><div className="sculpture-motion"><picture><source type="image/webp" srcSet="/assets/hero/dancer-480.webp 480w, /assets/hero/dancer-640.webp 640w, /assets/hero/dancer-960.webp 960w, /assets/hero/dancer-1254.webp 1254w" sizes="(max-width: 1023px) 59vw, 40vw"/><img src="/assets/hero/dancer.png" alt="" width="1254" height="1254" fetchPriority="high"/></picture></div></div></div>
+   <div className="sculpture-position robot-position" aria-hidden="true"><div className="sculpture-scroll"><div className="sculpture-motion"><picture><source type="image/webp" srcSet="/assets/hero/robot-arm-480.webp 467w, /assets/hero/robot-arm-640.webp 623w, /assets/hero/robot-arm-960.webp 934w, /assets/hero/robot-arm-1271.webp 1237w" sizes="(max-width: 1023px) 39vw, 34vw"/><img src="/assets/hero/robot-arm.png" alt="" width="1237" height="1271"/></picture></div></div></div>
+  </div>
+  <div className="hero-bottom"><p>Crafting digital experiences with code and creativity.<br/>Specializing in 3D Reconstruction, Machine Learning, and Full-Stack Development.</p><a className="hero-cta" href="#work">Explore highlights <span aria-hidden="true">↓</span></a></div>
+ </section>;
 }

@@ -1,0 +1,68 @@
+{
+  "dancer": {
+    "source": {
+      "width": 1254,
+      "height": 1254,
+      "bytes": 518691
+    },
+    "variants": [
+      {
+        "file": "public/assets/hero/dancer-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 19782
+      },
+      {
+        "file": "public/assets/hero/dancer-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 28750
+      },
+      {
+        "file": "public/assets/hero/dancer-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 52714
+      },
+      {
+        "file": "public/assets/hero/dancer-1254.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 75624
+      }
+    ]
+  },
+  "robot-arm": {
+    "source": {
+      "width": 1237,
+      "height": 1271,
+      "bytes": 526002
+    },
+    "variants": [
+      {
+        "file": "public/assets/hero/robot-arm-480.webp",
+        "width": 467,
+        "height": 480,
+        "bytes": 17200
+      },
+      {
+        "file": "public/assets/hero/robot-arm-640.webp",
+        "width": 623,
+        "height": 640,
+        "bytes": 24592
+      },
+      {
+        "file": "public/assets/hero/robot-arm-960.webp",
+        "width": 934,
+        "height": 960,
+        "bytes": 43482
+      },
+      {
+        "file": "public/assets/hero/robot-arm-1271.webp",
+        "width": 1237,
+        "height": 1271,
+        "bytes": 60702
+      }
+    ]
+  }
+}

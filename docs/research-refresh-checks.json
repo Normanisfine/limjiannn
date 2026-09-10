@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Dance media deferred above the fold at 390px",
+    "pass": true
+  },
+  {
+    "name": "All six dance sequences retained",
+    "pass": true
+  },
+  {
+    "name": "Muted inline looping with controls at 390px",
+    "pass": true
+  },
+  {
+    "name": "Offscreen dances pause at 390px",
+    "pass": true
+  },
+  {
+    "name": "Manual pause persists after returning at 390px",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion stops automatic dance playback at 390px",
+    "pass": true
+  },
+  {
+    "name": "No horizontal page overflow at 390px",
+    "pass": true
+  },
+  {
+    "name": "Original research links retained at 390px",
+    "pass": true
+  },
+  {
+    "name": "No browser exceptions at 390px",
+    "pass": true
+  },
+  {
+    "name": "Dance media deferred above the fold at 1440px",
+    "pass": true
+  },
+  {
+    "name": "All six dance sequences retained",
+    "pass": true
+  },
+  {
+    "name": "Muted inline looping with controls at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Offscreen dances pause at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Manual pause persists after returning at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion stops automatic dance playback at 1440px",
+    "pass": true
+  },
+  {
+    "name": "No horizontal page overflow at 1440px",
+    "pass": true
+  },
+  {
+    "name": "Original research links retained at 1440px",
+    "pass": true
+  },
+  {
+    "name": "No browser exceptions at 1440px",
+    "pass": true
+  }
+]

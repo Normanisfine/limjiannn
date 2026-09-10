@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Together at top 320",
+    "pass": true
+  },
+  {
+    "name": "Tools section removed 320",
+    "pass": true
+  },
+  {
+    "name": "Downward scroll separates 320",
+    "pass": true
+  },
+  {
+    "name": "Further scrolling increases separation 320",
+    "pass": true
+  },
+  {
+    "name": "Opposite directions 320",
+    "pass": true
+  },
+  {
+    "name": "Upward scroll closes 320",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 320",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion respected 320",
+    "pass": true
+  },
+  {
+    "name": "Top restores original pose 320",
+    "pass": true
+  },
+  {
+    "name": "Together at top 390",
+    "pass": true
+  },
+  {
+    "name": "Tools section removed 390",
+    "pass": true
+  },
+  {
+    "name": "Downward scroll separates 390",
+    "pass": true
+  },
+  {
+    "name": "Further scrolling increases separation 390",
+    "pass": true
+  },
+  {
+    "name": "Opposite directions 390",
+    "pass": true
+  },
+  {
+    "name": "Upward scroll closes 390",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 390",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion respected 390",
+    "pass": true
+  },
+  {
+    "name": "Top restores original pose 390",
+    "pass": true
+  },
+  {
+    "name": "Together at top 1440",
+    "pass": true
+  },
+  {
+    "name": "Tools section removed 1440",
+    "pass": true
+  },
+  {
+    "name": "Downward scroll separates 1440",
+    "pass": true
+  },
+  {
+    "name": "Further scrolling increases separation 1440",
+    "pass": true
+  },
+  {
+    "name": "Opposite directions 1440",
+    "pass": true
+  },
+  {
+    "name": "Upward scroll closes 1440",
+    "pass": true
+  },
+  {
+    "name": "No horizontal overflow 1440",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion respected 1440",
+    "pass": true
+  },
+  {
+    "name": "Top restores original pose 1440",
+    "pass": true
+  }
+]

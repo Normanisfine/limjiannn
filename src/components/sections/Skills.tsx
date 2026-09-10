@@ -1,0 +1,3 @@
+export default function Skills() {
+ return <section className="skills shell" aria-labelledby="tools-heading"><h2 id="tools-heading">Tools I work with</h2><div className="skills-grid"><div><h3>3D & robotics</h3><p>3D Gaussian Splatting · ROS · Isaac Lab · Unity · Unreal Engine · LiDAR</p><a href="#robot-learning">Robot learning pipeline ↗</a></div><div><h3>ML & systems</h3><p>Python · PyTorch · CUDA · C++ · TensorFlow · Scikit-learn</p><a href="#project-1">ML systems implementation ↗</a></div><div><h3>Full-stack</h3><p>React · Next.js · Flask · Docker · AWS · MySQL · MongoDB</p><a href="#project-2">SkyRoute ↗</a></div></div></section>;
+}
