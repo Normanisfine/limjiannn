@@ -8,7 +8,8 @@
     "start": "node scripts/preview.mjs",
     "lint": "eslint",
     "preview": "node scripts/preview.mjs",
-    "assets": "node scripts/prepare-assets.mjs"
+    "assets": "node scripts/prepare-assets.mjs",
+    "test:comments": "node --test tests/comments.test.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
@@ -24,6 +25,7 @@
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

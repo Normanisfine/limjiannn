@@ -1,0 +1,98 @@
+.report { max-width: 1040px; margin: 0 auto; padding: 44px 32px 72px; }
+.report h1, .report h2, .report h3 { font-family: Outfit, Arial, sans-serif; letter-spacing: -.025em; }
+.report h1 { font-size: clamp(34px, 5vw, 48px); margin: 10px 0 14px; }
+.report h2 { font-size: clamp(26px, 3.6vw, 34px); margin-bottom: 14px; }
+.report h3 { font-size: 24px; margin-bottom: 16px; }
+.report p { margin-bottom: 16px; }
+.report ul, .report ol { padding-left: 22px; margin: 12px 0 20px; }
+.report ul { list-style: disc; }
+.report ol { list-style: decimal; }
+.report li { padding-left: 4px; margin: 10px 0; }
+.report a { text-decoration: underline; text-underline-offset: 4px; }
+.report strong { font-weight: 600; }
+.eyebrow { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #536456; }
+.lead { font-size: 19px; line-height: 1.5; }
+.header { margin-bottom: 20px; }
+.contents { display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 14px; }
+.contents a { display: inline-flex; align-items: center; min-height: 44px; }
+.blueprint { margin: 12px 0 32px; background: #eef2f5; border: 1px solid #ccd7df; border-left: 3px solid #6b8499; color: #344b5d; }
+.blueprint > summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 17px 22px; min-height: 80px; list-style: none; }
+.blueprint > summary::-webkit-details-marker { display: none; }
+.blueprint > summary::after { content: '+'; font-size: 24px; flex-shrink: 0; color: #496477; }
+.blueprint[open] > summary::after { content: '−'; }
+.blueprint > summary:hover { background: #e5edf2; }
+.blueprint > summary h2 { margin: 0; color: #344b5d; letter-spacing: 0; }
+.blueprintTitle { display: block; font: 600 17px/1.4 Geist, Arial, sans-serif; }
+.blueprintMeta { display: block; margin-top: 4px; font: 400 12px/1.5 Geist, Arial, sans-serif; color: #506778; }
+.blueprintBody { padding: 22px; border-top: 1px solid #ccd7df; }
+.blueprintBody h3 { color: #344b5d; }
+.note, .sources { color: #536456; font-size: 13px; }
+.entry { padding-top: 4px; }
+.reportGroup + .reportGroup { border-top: 2px solid var(--forest); margin-top: 44px; padding-top: 32px; }
+.entry + .entry { border-top: 2px solid var(--forest); margin-top: 44px; padding-top: 32px; }
+.entry > header > .eyebrow { display: inline-block; background: var(--forest); color: var(--ivory); padding: 6px 10px; margin-bottom: 16px; }
+.entry > header > h2 { font-size: clamp(27px, 4vw, 38px); font-variant-numeric: tabular-nums; }
+.findings { margin: 22px 0 28px; background: #edf0e6; padding: 8px 22px; }
+.findings > div { display: grid; grid-template-columns: 220px 1fr; gap: 20px; padding: 14px 0; }
+.findings > div + div { border-top: 1px solid #d5dece; }
+.findings dt { font-weight: 600; }
+.findings dd { margin: 0; }
+.disclosure { border-top: 1px solid var(--line); }
+.disclosure:last-of-type { border-bottom: 1px solid var(--line); }
+.disclosure > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 0; min-height: 60px; list-style: none; }
+.disclosure > summary::-webkit-details-marker { display: none; }
+.disclosure > summary::after { content: '+'; flex-shrink: 0; font-size: 24px; font-weight: 400; color: var(--forest); }
+.disclosure[open] > summary::after { content: '−'; }
+.disclosure > summary:hover .disclosureTitle { text-decoration: underline; text-underline-offset: 4px; }
+.disclosureTitle { display: block; font-family: Outfit, Arial, sans-serif; font-size: 21px; font-weight: 500; line-height: 1.35; }
+.disclosureHeading { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 12px; }
+.purpose { display: inline-flex; align-items: center; width: fit-content; flex-shrink: 0; padding: 3px 7px; border: 1px solid #d7ddcf; border-radius: 3px; background: #f0f2eb; color: #4c5f45; font: 500 11px/1.4 Geist, Arial, sans-serif; letter-spacing: .015em; }
+.nextSteps > .purpose { margin-bottom: 10px; }
+.disclosureTakeaway { display: block; color: #536456; font-size: 14px; line-height: 1.55; margin-top: 5px; }
+.disclosureBody { padding: 0 0 22px; }
+.disclosureBody > :last-child { margin-bottom: 0; }
+.disclosureBody .disclosure { margin-left: 16px; }
+.disclosureBody .disclosure > summary { padding: 14px 0; }
+.disclosureBody .disclosureTitle { font-family: Geist, Arial, sans-serif; font-size: 16px; font-weight: 600; }
+.disclosureBody .disclosureTakeaway { font-size: 13px; }
+.decision { border-left: 2px solid var(--sage); padding-left: 18px; margin-top: 22px; }
+.tableScroll { overflow-x: auto; margin: 20px 0; }
+.report table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+.report caption { text-align: left; color: #536456; margin-bottom: 12px; font-size: 13px; }
+.report th, .report td { border-bottom: 1px solid var(--line); padding: 12px 14px 12px 0; vertical-align: top; }
+.report th { font-weight: 600; }
+.report td { white-space: nowrap; }
+.report thead th { border-top: 1px solid var(--forest); }
+.figure { margin: 24px 0; }
+.figure img { width: 100%; height: auto; background: white; }
+.figure figcaption { color: #536456; font-size: 13px; line-height: 1.7; margin-top: 12px; }
+.reading li { margin-bottom: 18px; }
+.experimentChecks > section { margin: 20px 0; }
+.experimentChecks h4 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
+.experimentChecks .tableScroll { margin: 12px 0; }
+.termGuide { margin: 24px 0; padding: 14px 18px; background: #f0f2eb; font-size: 14px; }
+.termGuide > div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 8px 0; }
+.termGuide dt { font-weight: 600; }
+.termGuide dd { margin: 0; }
+.nextSteps { margin-top: 28px; }
+.nextSteps li { margin: 8px 0; }
+.discussion { font-size: 14px; }
+.sources { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 24px; }
+@media (max-width: 640px) {
+    .report { padding: 28px 22px 48px; }
+    .findings > div { grid-template-columns: 1fr; gap: 6px; }
+    .termGuide > div { grid-template-columns: 1fr; gap: 4px; }
+    .blueprint > summary { padding: 14px 16px; gap: 12px; }
+    .blueprintBody { padding: 18px 16px; }
+    .lead { font-size: 17px; }
+    .findings { padding: 4px 16px; }
+    .disclosureTitle { font-size: 19px; }
+    .disclosure > summary { gap: 12px; padding: 18px 0; }
+    .disclosureBody .disclosure { margin-left: 8px; }
+    .report th, .report td { padding-right: 14px; }
+}
+@media print {
+    .report { max-width: none; padding: 0; }
+    .contents { display: none; }
+    .figure, .report tr { break-inside: avoid; }
+}

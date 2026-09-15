@@ -35,6 +35,8 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
+        env:
+          NEXT_PUBLIC_COMMENTS_URL: ${{ vars.NEXT_PUBLIC_COMMENTS_URL || 'https://scktzntpxzqcixqlpzdj.supabase.co/functions/v1/report-comments' }}
         run: npm run build
 
       - name: Upload artifact

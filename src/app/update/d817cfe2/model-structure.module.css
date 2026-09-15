@@ -1,0 +1,12 @@
+.structure { margin: 20px 0; padding: 18px 20px; border-left: 3px solid #608468; background: #f0f4ec; font-size: 14px; }
+.structure .lead { font-size: 16px; margin-bottom: 12px; }
+.structure > p { margin-bottom: 14px; }
+.roles { margin: 0 0 14px; }
+.roles > div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 7px 0; }
+.roles dt { font-weight: 600; color: #294835; }
+.roles dd { margin: 0; }
+.structure .loss { border-top: 1px solid #d4dcd3; padding-top: 12px; margin-bottom: 0; }
+@media (max-width: 640px) {
+    .structure { padding: 16px; }
+    .roles > div { grid-template-columns: 1fr; gap: 3px; }
+}

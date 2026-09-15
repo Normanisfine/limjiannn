@@ -1,0 +1,6 @@
+project_id = "lingjie-report-comments"
+
+[functions.report-comments]
+# Guests submit without a Supabase account. Validation and rate limits are in the function.
+verify_jwt = false
+entrypoint = "./functions/report-comments/index.ts"
