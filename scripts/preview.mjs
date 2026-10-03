@@ -4,6 +4,7 @@ import path from 'node:path';
 import { gzipSync } from 'node:zlib';
 const compressed = new Map();
 const root = path.resolve('out');
+const port = Number(process.env.PORT || 3000);
 const types = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json', '.webp':'image/webp', '.png':'image/png', '.jpeg':'image/jpeg', '.jpg':'image/jpeg', '.svg':'image/svg+xml', '.woff2':'font/woff2', '.pdf':'application/pdf', '.mp4':'video/mp4', '.webm':'video/webm'};
 http.createServer((req,res) => {
  let file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
@@ -20,4 +21,4 @@ http.createServer((req,res) => {
  else if(/\.(html|css|js|json|svg|txt)$/.test(file) && req.headers['accept-encoding']?.includes('gzip')) {
  const stamp=fs.statSync(file).mtimeMs;const cached=compressed.get(file);const data=cached?.stamp===stamp?cached.data:gzipSync(fs.readFileSync(file));compressed.set(file,{stamp,data});res.setHeader('Content-Encoding','gzip');res.setHeader('Vary','Accept-Encoding');res.setHeader('Content-Length',data.length);res.end(data);
  } else{res.setHeader('Content-Length',size);fs.createReadStream(file).pipe(res);}
-}).listen(3000,'127.0.0.1',() => console.log('Portfolio preview: http://localhost:3000'));
+}).listen(port,'127.0.0.1',() => console.log(`Portfolio preview: http://localhost:${port}`));

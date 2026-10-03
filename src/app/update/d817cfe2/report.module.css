@@ -66,6 +66,12 @@
 .figure { margin: 24px 0; }
 .figure img { width: 100%; height: auto; background: white; }
 .figure figcaption { color: #536456; font-size: 13px; line-height: 1.7; margin-top: 12px; }
+.videoFigure { margin: 28px 0; padding: 20px; background: #eef2f5; border: 1px solid #ccd7df; }
+.videoFigure h4 { font-size: 18px; font-weight: 600; margin-bottom: 14px; }
+.videoFigure label { display: block; font-size: 13px; margin-bottom: 6px; }
+.videoFigure select { width: 100%; min-height: 44px; padding: 8px 12px; border: 1px solid #82958a; background: white; color: #263b2e; margin-bottom: 12px; }
+.videoFigure video { display: block; width: 100%; height: auto; background: #e5edf2; }
+.videoFigure figcaption { font-size: 13px; line-height: 1.65; margin-top: 14px; color: #344b5d; }
 .reading li { margin-bottom: 18px; }
 .experimentChecks > section { margin: 20px 0; }
 .experimentChecks h4 { margin: 0 0 8px; font-size: 16px; font-weight: 600; }
