@@ -1,0 +1,46 @@
+{
+  "bridge_point_last_20261027_011448": {
+    "task_success_rates": {
+      "StackGreenCubeOnYellowCubeBakedTexInScene-v0": 0.0,
+      "PutCarrotOnPlateInScene-v0": 0.0,
+      "PutSpoonOnTableClothInScene-v0": 0.125,
+      "PutEggplantInBasketScene-v0": 0.0
+    },
+    "mean4": 0.03125,
+    "episodes_per_task": 24,
+    "checkpoint": "/home/mj/research/unilap_ws/mj_wsl/exp/exp1_point/runs/point/last.ckpt"
+  },
+  "bridge_baseline_last_20261027_011448": {
+    "task_success_rates": {
+      "StackGreenCubeOnYellowCubeBakedTexInScene-v0": 0.0,
+      "PutCarrotOnPlateInScene-v0": 0.20833333333333334,
+      "PutSpoonOnTableClothInScene-v0": 0.125,
+      "PutEggplantInBasketScene-v0": 0.0
+    },
+    "mean4": 0.08333333333333334,
+    "episodes_per_task": 24,
+    "checkpoint": "/home/mj/research/unilap_ws/mj_wsl/exp/exp1_point/runs/baseline/last.ckpt"
+  },
+  "bridge_baseline_best_20261027_run2": {
+    "task_success_rates": {
+      "StackGreenCubeOnYellowCubeBakedTexInScene-v0": 0.0,
+      "PutCarrotOnPlateInScene-v0": 0.08333333333333333,
+      "PutSpoonOnTableClothInScene-v0": 0.08333333333333333,
+      "PutEggplantInBasketScene-v0": 0.0
+    },
+    "mean4": 0.041666666666666664,
+    "episodes_per_task": 24,
+    "checkpoint": "/home/mj/research/unilap_ws/mj_wsl/exp/exp1_point/runs/baseline/best.ckpt"
+  },
+  "bridge_point_best_20261027_011448": {
+    "task_success_rates": {
+      "StackGreenCubeOnYellowCubeBakedTexInScene-v0": 0.0,
+      "PutCarrotOnPlateInScene-v0": 0.20833333333333334,
+      "PutSpoonOnTableClothInScene-v0": 0.08333333333333333,
+      "PutEggplantInBasketScene-v0": 0.0
+    },
+    "mean4": 0.07291666666666667,
+    "episodes_per_task": 24,
+    "checkpoint": "/home/mj/research/unilap_ws/mj_wsl/exp/exp1_point/runs/point/best.ckpt"
+  }
+}

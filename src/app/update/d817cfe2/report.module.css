@@ -102,3 +102,29 @@
     .contents { display: none; }
     .figure, .report tr { break-inside: avoid; }
 }
+
+.videoComparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.videoComparison h5 { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.videoComparison a { display: inline-block; margin-top: 8px; font-size: 13px; }
+.moreVideos { margin-top: 20px; border-top: 1px solid #ccd7df; padding-top: 14px; }
+.moreVideos > summary { cursor: pointer; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+@media (max-width: 640px) { .videoComparison { grid-template-columns: 1fr; } }
+
+.pointArchitecture { margin: 28px 0; padding: 22px; border: 1px solid #ccd7df; background: #f7f8f3; }
+.pointArchitecture h4 { font-size: 18px; font-weight: 600; margin-bottom: 18px; }
+.latentFlow { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
+.pointArchitecture small { display: block; font-size: 12px; font-weight: 400; color: #536456; margin-top: 5px; }
+.headBranches { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 20px 0; }
+.headBranches section { border-top: 2px solid #82958a; padding-top: 12px; }
+.branchLabel { font-size: 12px; color: #536456; }
+.headBranches h5 { font-size: 17px; font-weight: 600; margin: 10px 0 6px; }
+.headBranches p { font-size: 13px; margin-bottom: 12px; }
+.headBranches strong { font-size: 14px; }
+.architectureLoss { padding: 14px 0; border-block: 1px solid #d5dece; font-size: 15px; }
+.pointArchitecture figcaption { font-size: 13px; color: #536456; line-height: 1.65; }
+@media (max-width: 640px) {
+    .latentFlow { flex-direction: column; align-items: flex-start; }
+    .latentFlow > span[aria-hidden] { transform: rotate(90deg); }
+    .headBranches { grid-template-columns: 1fr; }
+    .pointArchitecture { padding: 16px; }
+}

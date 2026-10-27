@@ -1,0 +1,52 @@
+{
+  "phase1": {
+    "completed_utc": "2026-10-27T17:37:53.524857+00:00",
+    "windows": 1920,
+    "episodes": 150,
+    "results": "/home/mj/research/unilap_ws/mj_wsl/exp/exp2_latent_umap/results/expanded_5x",
+    "scripts_sha256": {
+      "download_small_subset.py": "5f7affda2dd2f4ba8b8dcb7cd625895ca9c9d6593dee6a8d5675747d9c85c83a",
+      "build_report.py": "e79c4383003e8f5b4a81b76e643b13a1aaa24941816c94a4bd42b804102982a9",
+      "run_expanded.py": "28167870dcc3042043c2f694157f16ea28f1d5abe922c97cf6fa3033cd100e8d"
+    },
+    "summary": "Cross-dataset neighbors: first token 14.2%, chunk mean 8.1%, ordered full chunk 6.9%.",
+    "interpretation": "First-token motion-proxy agreement is 19.7%; shuffled mean 19.8%, descriptive interval 17.1%\u201322.2%. These image-flow proxies do not establish shared physical action semantics. Later tokens have more proxy signal: z[3] agrees 26.2% versus 22.1% shuffled, and z[7] 27.0% versus 21.6%. Correlated windows, multiple token comparisons, and imperfect labels limit interpretation."
+  },
+  "phase2": {
+    "routes": {
+      "Bridge": {
+        "checkpoint": "bridge",
+        "path": "/home/mj/research/unilap_ws/mj_wsl/exp/exp2_latent_umap/phase2_checkpoints_5x/inference_cache/bridge/latents.npz",
+        "sha256": "0ec789c858ca303af00986f5c0faa78fe3c2f55d9858c9aef935bab63ead2f6c"
+      },
+      "Fractal": {
+        "checkpoint": "fractal",
+        "path": "/home/mj/research/unilap_ws/mj_wsl/exp/exp2_latent_umap/phase2_checkpoints_5x/inference_cache/fractal/latents.npz",
+        "sha256": "26d802eec6971757786b5ad9a2d3ac48313c4f3a9d119758163b84b252101f00"
+      },
+      "GR1": {
+        "checkpoint": "gr1",
+        "path": "/home/mj/research/unilap_ws/mj_wsl/exp/exp2_latent_umap/phase2_checkpoints_5x/inference_cache/gr1/latents.npz",
+        "sha256": "ef0c2fcb3c5224defa54efcc44af450cb881ac472ffb1c66d97065dcf7a98290"
+      }
+    },
+    "windows": 1440,
+    "windows_per_dataset": 480,
+    "episodes": 135,
+    "shape": [
+      1440,
+      2,
+      16,
+      32
+    ],
+    "seeds": [
+      42,
+      314
+    ],
+    "steps": 4,
+    "excluded": "EgoDex: no corresponding Phase-II checkpoint",
+    "projection_fit": "Phase-II native outputs only; separately fitted per representation. All-token colorings share coordinates.",
+    "inference": "Reused exact matching cached outputs; no cross-dataset/checkpoint pairs included.",
+    "script_sha256": "7156b488b46a36615e61d9d5fa6871c17ab735e7367ecd40026d205173a92843"
+  }
+}

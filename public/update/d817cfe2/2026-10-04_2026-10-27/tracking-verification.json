@@ -1,0 +1,212 @@
+{
+  "episodes": [
+    {
+      "episode": "bridge_000000",
+      "dataset": "bridge",
+      "frames": 26,
+      "instances": 7,
+      "missing_prompts": [
+        "robot gripper",
+        "basket"
+      ]
+    },
+    {
+      "episode": "bridge_000001",
+      "dataset": "bridge",
+      "frames": 45,
+      "instances": 5,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "bridge_000002",
+      "dataset": "bridge",
+      "frames": 45,
+      "instances": 4,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "robocasa_closecabinet_000000",
+      "dataset": "robocasa_atomic",
+      "frames": 155,
+      "instances": 9,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "robocasa_opendrawer_000000",
+      "dataset": "robocasa_atomic",
+      "frames": 185,
+      "instances": 2,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "robocasa_pickplacecountertosink_000000",
+      "dataset": "robocasa_atomic",
+      "frames": 274,
+      "instances": 5,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "fractal_000000",
+      "dataset": "fractal",
+      "frames": 115,
+      "instances": 3,
+      "missing_prompts": [
+        "robot gripper",
+        "rxbar chocolate",
+        "counter"
+      ]
+    },
+    {
+      "episode": "fractal_000001",
+      "dataset": "fractal",
+      "frames": 66,
+      "instances": 3,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "fractal_000002",
+      "dataset": "fractal",
+      "frames": 25,
+      "instances": 3,
+      "missing_prompts": [
+        "robot gripper",
+        "apple"
+      ]
+    },
+    {
+      "episode": "dreamdojo_gr1_000_000000",
+      "dataset": "dreamdojo_gr1",
+      "frames": 97,
+      "instances": 7,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "dreamdojo_gr1_001_000001",
+      "dataset": "dreamdojo_gr1",
+      "frames": 52,
+      "instances": 2,
+      "missing_prompts": [
+        "robot gripper",
+        "plastic star fruit",
+        "blue basket"
+      ]
+    },
+    {
+      "episode": "dreamdojo_gr1_002_000002",
+      "dataset": "dreamdojo_gr1",
+      "frames": 74,
+      "instances": 2,
+      "missing_prompts": [
+        "robot gripper",
+        "yellow lemon"
+      ]
+    },
+    {
+      "episode": "gr1_sim_003_000000",
+      "dataset": "gr1_sim",
+      "frames": 376,
+      "instances": 2,
+      "missing_prompts": [
+        "robot gripper",
+        "bottled water"
+      ]
+    },
+    {
+      "episode": "gr1_sim_004_000000",
+      "dataset": "gr1_sim",
+      "frames": 338,
+      "instances": 4,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "gr1_sim_005_000000",
+      "dataset": "gr1_sim",
+      "frames": 271,
+      "instances": 5,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "egodex_add_remove_lid_1",
+      "dataset": "egodex",
+      "frames": 83,
+      "instances": 5,
+      "missing_prompts": []
+    },
+    {
+      "episode": "egodex_clean_cups_140",
+      "dataset": "egodex",
+      "frames": 131,
+      "instances": 6,
+      "missing_prompts": [
+        "sponge",
+        "pink tablecloth",
+        "lavender background"
+      ]
+    },
+    {
+      "episode": "egodex_clean_tableware_317",
+      "dataset": "egodex",
+      "frames": 120,
+      "instances": 4,
+      "missing_prompts": [
+        "forks",
+        "spoons",
+        "knives",
+        "white background"
+      ]
+    },
+    {
+      "episode": "robocasa_composite_tiltpan_000000",
+      "dataset": "robocasa_composite",
+      "frames": 266,
+      "instances": 4,
+      "missing_prompts": [
+        "robot gripper"
+      ]
+    },
+    {
+      "episode": "robocasa_composite_shakepan_000000",
+      "dataset": "robocasa_composite",
+      "frames": 247,
+      "instances": 5,
+      "missing_prompts": [
+        "robot gripper",
+        "corn"
+      ]
+    },
+    {
+      "episode": "robocasa_composite_rotatepan_000000",
+      "dataset": "robocasa_composite",
+      "frames": 245,
+      "instances": 2,
+      "missing_prompts": [
+        "robot gripper",
+        "heat"
+      ]
+    }
+  ],
+  "videos_decoded": 84,
+  "nonempty_instructions": true,
+  "timestamps_checked": true,
+  "queries_inside_anchor_masks": true,
+  "sampling_budgets_checked": true,
+  "note": "Checks establish artifact consistency, not physical tracking accuracy."
+}
