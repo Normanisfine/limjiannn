@@ -14,6 +14,7 @@ export default function Update20261027() {
             <p className={styles.lead}>UniLAP: checkpoint evaluation, point supervision, and how unified the latent actions really are.</p>
             <dl className={styles.findings}>
                 <div><dt>Ray’s checkpoints</dt><dd>Google pick-can reaches <strong>206/300 (68.7%)</strong>, close to the reported 68.3%. Bridge reaches 45/96; carrot grasping accounts for most of the shortfall.</dd></div>
+                <div><dt>Phase I motion supervision</dt><dd>In one action chunk, prediction–target cosine falls from <strong>0.767 to 0.554</strong>. This motivates testing whether visual-feature motion proxies need more explicit point-trajectory supervision.</dd></div>
                 <div><dt>Point tracking & training</dt><dd>Later mask initialization expands tracking coverage, but training from Phase I with point supervision gives <strong>mixed policy results</strong>: best checkpoint 7/96 versus 4/96, final checkpoint 3/96 versus 8/96.</dd></div>
                 <div><dt>Latent action visualization & analysis</dt><dd>Phase I learns without action labels, but the visualizations retain dataset structure. Dataset-specific Phase II fine-tuning does not by itself establish generalization to unseen embodiments.</dd></div>
             </dl>
@@ -38,6 +39,7 @@ export default function Update20261027() {
             <p>Next checks: rerun GR1 with ten environments and compare carrot inputs, checkpoint hashes, predicted action chunks, and episode outcomes with Ray’s original run.</p>
         </Disclosure>
         <Disclosure id={`${reportId}-point`} title="03 · Point tracking & policy learning">
+            <p>One motivation for adding point tracking is the Phase I motion-predictor diagnosis in Section 05: agreement with the visual-feature motion target weakens later in the action chunk. I want to test whether explicit point trajectories provide motion supervision that visual features alone may miss.</p>
             <p>I now initialize each instance from <strong>its first usable mask</strong>, allowing objects missed at frame zero to enter the tracks later. SAM3 uses instruction-derived object names and fixed arm, gripper, or hand prompts; points sampled within its masks seed full-video CoTracker3 tracks, including predictions before the anchor frame. Track identities stay fixed, with visibility and confidence filters controlling display.</p>
             <p>The Bridge comparison below shows both methods on the same episode, with additional examples from a 21-episode gallery spanning seven dataset settings. For training labels, discovery at one-second intervals with local refinement reduces segmentation work.</p>
             <PointTrackingVideos />
@@ -70,8 +72,25 @@ export default function Update20261027() {
             <p><strong>The first token has clearer dataset separation than the chunk mean in these views.</strong> Later tokens change the pattern: at z[15], Bridge and Fractal overlap strongly in the first two principal components while GR1 remains more distinct. This makes z[0] alone an incomplete summary of the chunk.</p>
             <p className={styles.note}>Phase II projections are fitted separately per representation and separately from Phase I. Dataset identity is confounded with checkpoint identity: separation can reflect different data, different learned weights, or both. PCA retains only the displayed fraction of variance, and UMAP emphasizes local neighborhoods; neither plot proves shared physical action semantics or transfer ability. These figures do not establish that fine-tuning caused greater separation.</p>
         </Disclosure>
-        <Disclosure id={`${reportId}-motion`} title="05 · Motion similarity (pending)">
-            <p>The motion predictor’s cosine-similarity visualization is on another machine; I will add the figures, compared features, and interpretation after transferring the results.</p>
+        <Disclosure id={`${reportId}-motion`} title="05 · Does the Phase I motion proxy provide useful supervision?" purpose="Getting insight">
+            <p>These visualizations examine <strong>UniLAP’s Phase I motion predictor</strong>. My question is whether the motion proxy induced by visual-feature changes provides useful supervision for learning latent actions. In the UniLAP paper (Section 3.2, Eqs. 5–8), frozen DINOv2 keys establish soft cross-frame patch correspondences. The target is the aligned future feature minus the current feature: <code>Δf = C f_next − f_current</code>. This is a feature-space proxy for motion. The predictor uses the latent action chunk and anchor-frame features to predict these residuals, trained with a patch-wise cosine loss.</p>
+            <p>This example uses Ray’s Phase I checkpoint on Bridge episode 9666, with the instruction “put the blue block on top of the green block.” The latent chunk is sampled from frame 0 and the instruction. All four predictions share that anchor; the observed target pairs advance through frames 0, 4, 8, 12, and 16.</p>
+            <Results caption="Phase I motion predictor · mean cosine across 256 patches per observed frame pair" headings={['Observed frame pair', 'Latent prediction step (zero-based)', 'Mean cosine']} rows={[
+                ['0 → 4', '3', '0.767'],
+                ['4 → 8', '7', '0.643'],
+                ['8 → 12', '11', '0.633'],
+                ['12 → 16', '15', '0.554'],
+            ]} />
+            <p><strong>Cosine similarity decreases as the action chunk progresses:</strong> from 0.767 to 0.554, with an overall mean of 0.649. The predictor agrees less with the feature-derived target later in this example. This identifies longer-horizon motion prediction as a possible place to improve.</p>
+            <p>Each figure shows the anchor and observed frame pair above three patch maps: target residual magnitude, predicted residual magnitude, and their cosine similarity. “GT” refers to the DINO-derived target, not measured physical motion. Magnitudes are feature-vector norms; the cosine objective constrains direction, so the smaller predicted magnitudes alone do not demonstrate failure.</p>
+            <Figure src={`${assets}/motion/pair_0000_0004.png`} alt="Phase I motion prediction for frames 0 to 4: observed and predicted feature residuals, with mean patch cosine 0.767." width={2100} height={1200}>Early in the chunk · frames 0 → 4, mean cosine 0.767.</Figure>
+            <Figure src={`${assets}/motion/pair_0012_0016.png`} alt="Phase I motion prediction for frames 12 to 16 from anchor frame 0, with mean patch cosine 0.554." width={2100} height={1200}>Later in the chunk · frames 12 → 16, mean cosine 0.554.</Figure>
+            <Disclosure title="Intermediate frame pairs">
+                <Figure src={`${assets}/motion/pair_0004_0008.png`} alt="Feature residual prediction for frames 4 to 8, with mean patch cosine 0.643." width={2100} height={1200}>Frames 4 → 8 · mean cosine 0.643.</Figure>
+                <Figure src={`${assets}/motion/pair_0008_0012.png`} alt="Feature residual prediction for frames 8 to 12, with mean patch cosine 0.633." width={2100} height={1200}>Frames 8 → 12 · mean cosine 0.633.</Figure>
+            </Disclosure>
+            <p><strong>This is one reason I suspect visual features alone may not be sufficient motion supervision, and why I added point tracking.</strong> Point trajectories provide explicit information about where tracked locations move over time. I want to test whether this complements the feature residual and improves motion consistency later in the chunk. The mixed policy results above mean that a benefit has not yet been established.</p>
+            <p className={styles.note}>This is one episode, one anchor, and one sampling seed. Cosine measures agreement with the proxy, not whether the proxy captures physical motion correctly. The decline could reflect predictor limitations, uncertainty in the sampled future, or limitations of the target. This diagnostic uses the native 5 FPS timeline without training FPS resampling, and its repository configuration is not verified against Ray’s training configuration. It motivates further testing rather than establishing a general failure of visual-feature supervision.</p>
         </Disclosure>
         <section className={styles.nextSteps} aria-labelledby={`${reportId}-next`}>
             <PurposeLabel purpose="Planning" />
@@ -85,7 +104,7 @@ export default function Update20261027() {
             </ol>
         </section>
         <footer className={styles.sources}>
-            <p>Evidence: <a href={`${assets}/ray-evaluation-summary.md`}>Ray checkpoint evaluation and audit summary</a>; <a href={`${assets}/point-evaluation.json`}>point-training evaluation summaries</a>; <a href={`${assets}/latent-provenance.json`}>latent projection provenance</a>; <a href={`${assets}/tracking-verification.json`}>tracking verification</a>. Results reflect saved experiment outputs; no new training or evaluation was run for this report.</p>
+            <p>Evidence: <a href={`${assets}/ray-evaluation-summary.md`}>Ray checkpoint evaluation and audit summary</a>; <a href={`${assets}/point-evaluation.json`}>point-training evaluation summaries</a>; <a href={`${assets}/latent-provenance.json`}>latent projection provenance</a>; <a href={`${assets}/motion/diagnostics.json`}>Phase I motion diagnostics</a>; <a href={`${assets}/tracking-verification.json`}>tracking verification</a>. Results reflect saved experiment outputs; no new training or evaluation was run for this report.</p>
         </footer>
     </article>;
 }
